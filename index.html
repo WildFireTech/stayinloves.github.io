@@ -262,7 +262,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-25T00:06:11+08:00" content="2016-04-25">
+            <time itemprop="dateCreated" datetime="2016-04-25T13:02:41+08:00" content="2016-04-25">
               2016-04-25
             </time>
           </span>
@@ -291,49 +291,12 @@
 
       
         
-          
-            <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code>#define N 99999
-long long prime[N] = {0}, num_prime = 0;
-int isNotPrime[N] = {1,1};
-int main()
-{
-    for (long long i = 2 ; i &lt; N ; i ++)
-    {
-        if (!isNotPrime[i])
-            prime[num_prime ++] = i;
-        for (long long j = 0 ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N; j++)
-        {
-            isNotPrime[i * prime[j]] = 1;
-            if (i % prime[j] == 0)
-                break;
-        }
-    }
-    return 0;
-}
-</code></pre><h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><blockquote>
-<p>已知：所有合数可以分解成素数的积，如<code>8=2*2*2</code>or<code>12=2*2*3</code>    </p>
-</blockquote>
-<ol>
-<li>首先将除0，1以外所有自然数先置为素数</li>
-<li>从2开始进入循环，并且所有数都会进入第二个for循环</li>
-<li>将每个素数与比其小(可以等与）的素数两两相乘的乘积，置为合数</li>
-<li>将每个合数与比其最小质因数小（可以等于）的素数两两相乘的乘积，置为合数。</li>
-</ol>
-<p>实际操作流程如下，每一行表示一个数进入循环后，被置为合数的数</p>
-<pre><code>2*2
-3*2 3*3
-(2*2)*2
-5*2 5*3 5*5
-(3*2)*2
-......
-</code></pre><p>注意：将所有合数写成素数积的形式。<br>难点：</p>
-<ol>
-<li>如何理解能将合数全部筛出</li>
-<li>如何理解不会重复筛<br>素数不会被筛出。当第一个for循环进入一个合数时，假设将该数拆为从小到大排列的质数积<code>x=a*b*c*d</code>,此时只需将不大于a的质数与x的乘积置为合数，如<code>a*a*b*c*d</code>，而类似<code>b*a*b*c*d</code>这样的数会在<code>b*b*c*d</code>时被置为合数，显然这件事情发生在<code>b*a*b*c*d</code>进入循环之前。</li>
-</ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://xuanwo.org/2015/03/18/number-theory-sieve-method-to-find-primes/" target="_blank" rel="external">xuanwo:数论——筛法求素数</a></p>
-
-          
+          <p>采用高效率的筛法，几乎是线性的。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/25/linear screen primes/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

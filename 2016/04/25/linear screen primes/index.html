@@ -80,40 +80,16 @@
 
 
 
-<meta name="description" content="代码#define N 99999
-long long prime[N] = {0}, num_prime = 0;
-int isNotPrime[N] = {1,1};
-int main()
-{
-    for (long long i = 2 ; i &amp;lt; N ; i ++)
-    {
-        if (!isNotPrime[i])
-            prime[num_p">
+<meta name="description" content="采用高效率的筛法，几乎是线性的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性筛素数">
 <meta property="og:url" content="http://stay.wiki/2016/04/25/linear screen primes/index.html">
 <meta property="og:site_name" content="STay's Blog">
-<meta property="og:description" content="代码#define N 99999
-long long prime[N] = {0}, num_prime = 0;
-int isNotPrime[N] = {1,1};
-int main()
-{
-    for (long long i = 2 ; i &amp;lt; N ; i ++)
-    {
-        if (!isNotPrime[i])
-            prime[num_p">
-<meta property="og:updated_time" content="2016-04-24T16:04:19.000Z">
+<meta property="og:description" content="采用高效率的筛法，几乎是线性的。">
+<meta property="og:updated_time" content="2016-04-25T05:02:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性筛素数">
-<meta name="twitter:description" content="代码#define N 99999
-long long prime[N] = {0}, num_prime = 0;
-int isNotPrime[N] = {1,1};
-int main()
-{
-    for (long long i = 2 ; i &amp;lt; N ; i ++)
-    {
-        if (!isNotPrime[i])
-            prime[num_p">
+<meta name="twitter:description" content="采用高效率的筛法，几乎是线性的。">
 
 
 
@@ -282,7 +258,7 @@ int main()
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-25T00:06:11+08:00" content="2016-04-25">
+            <time itemprop="dateCreated" datetime="2016-04-25T13:02:41+08:00" content="2016-04-25">
               2016-04-25
             </time>
           </span>
@@ -310,24 +286,8 @@ int main()
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code>#define N 99999
-long long prime[N] = {0}, num_prime = 0;
-int isNotPrime[N] = {1,1};
-int main()
-{
-    for (long long i = 2 ; i &lt; N ; i ++)
-    {
-        if (!isNotPrime[i])
-            prime[num_prime ++] = i;
-        for (long long j = 0 ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N; j++)
-        {
-            isNotPrime[i * prime[j]] = 1;
-            if (i % prime[j] == 0)
-                break;
-        }
-    }
-    return 0;
-}
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>采用高效率的筛法，几乎是线性的。<a id="more"></a></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">99999</span></span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> prime[N] = &#123;<span class="number">0</span>&#125;, num_prime = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> isNotPrime[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">2</span> ; i &lt; N ; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isNotPrime[i])</span><br><span class="line">            prime[num_prime ++] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> j = <span class="number">0</span> ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            isNotPrime[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre><h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><blockquote>
 <p>已知：所有合数可以分解成素数的积，如<code>8=2*2*2</code>or<code>12=2*2*3</code>    </p>
 </blockquote>
@@ -347,8 +307,10 @@ int main()
 </code></pre><p>注意：将所有合数写成素数积的形式。<br>难点：</p>
 <ol>
 <li>如何理解能将合数全部筛出</li>
-<li>如何理解不会重复筛<br>素数不会被筛出。当第一个for循环进入一个合数时，假设将该数拆为从小到大排列的质数积<code>x=a*b*c*d</code>,此时只需将不大于a的质数与x的乘积置为合数，如<code>a*a*b*c*d</code>，而类似<code>b*a*b*c*d</code>这样的数会在<code>b*b*c*d</code>时被置为合数，显然这件事情发生在<code>b*a*b*c*d</code>进入循环之前。</li>
+<li>如何理解不会重复筛</li>
 </ol>
+<p>素数不会被筛出。当第一个for循环进入一个合数时，假设将该数拆为从小到大排列的质数积<code>x=a*b*c*d</code>,此时只需将不大于a的质数与x的乘积置为合数，如<code>a*a*b*c*d</code>，而类似<code>b*a*b*c*d</code>这样的数会在<code>b*b*c*d</code>时被置为合数，显然这件事情发生在<code>b*a*b*c*d</code>进入循环之前。</p>
+<p>若参考普通筛素数法（见参考），一个合数<code>x=a*b*c*d</code>在<code>a</code>进入循环时就被置为合数，后面<code>bcd</code>进入时重复置为合数，故线性筛限制了这个合数只在<code>y=b*c*d</code>进入时被置为合数，避免了重复的情况，极大地提升了效率。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://xuanwo.org/2015/03/18/number-theory-sieve-method-to-find-primes/" target="_blank" rel="external">xuanwo:数论——筛法求素数</a></p>
 
       

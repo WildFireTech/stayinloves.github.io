@@ -80,25 +80,16 @@
 
 
 
-<meta name="description" content="Kruskal’s algorithm
-A greedy algorithm.
-
-HDU 1863 畅通工程">
+<meta name="description" content="采用高效率的筛法，几乎是线性的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最小生成树(MST)">
-<meta property="og:url" content="http://stay.wiki/2016/04/26/MST/index.html">
+<meta property="og:title" content="线性筛素数">
+<meta property="og:url" content="http://stay.wiki/2016/05/03/linear screen primes/index.html">
 <meta property="og:site_name" content="STay's Blog">
-<meta property="og:description" content="Kruskal’s algorithm
-A greedy algorithm.
-
-HDU 1863 畅通工程">
-<meta property="og:updated_time" content="2016-04-26T15:14:27.000Z">
+<meta property="og:description" content="采用高效率的筛法，几乎是线性的。">
+<meta property="og:updated_time" content="2016-05-02T16:04:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最小生成树(MST)">
-<meta name="twitter:description" content="Kruskal’s algorithm
-A greedy algorithm.
-
-HDU 1863 畅通工程">
+<meta name="twitter:title" content="线性筛素数">
+<meta name="twitter:description" content="采用高效率的筛法，几乎是线性的。">
 
 
 
@@ -116,7 +107,7 @@ HDU 1863 畅通工程">
   };
 </script>
 
-  <title> 最小生成树(MST) | STay's Blog </title>
+  <title> 线性筛素数 | STay's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -198,22 +189,22 @@ HDU 1863 畅通工程">
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
             
             公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -255,7 +246,7 @@ HDU 1863 畅通工程">
             
             
               
-                最小生成树(MST)
+                线性筛素数
               
             
           </h1>
@@ -267,11 +258,30 @@ HDU 1863 畅通工程">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-26T23:14:27+08:00" content="2016-04-26">
-              2016-04-26
+            <time itemprop="dateCreated" datetime="2016-05-03T00:04:39+08:00" content="2016-05-03">
+              2016-05-03
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -295,19 +305,32 @@ HDU 1863 畅通工程">
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="Kruskal’s-algorithm"><a href="#Kruskal’s-algorithm" class="headerlink" title="Kruskal’s algorithm"></a>Kruskal’s algorithm</h1><blockquote>
-<p>A greedy algorithm.</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>采用高效率的筛法，几乎是线性的。<a id="more"></a></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">99999</span></span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> prime[N] = &#123;<span class="number">0</span>&#125;, num_prime = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> isNotPrime[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">2</span> ; i &lt; N ; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isNotPrime[i])</span><br><span class="line">            prime[num_prime ++] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> j = <span class="number">0</span> ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            isNotPrime[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><blockquote>
+<p>已知：所有合数可以分解成素数的积，如<code>8=2*2*2</code>or<code>12=2*2*3</code>    </p>
 </blockquote>
-<p>HDU 1863 <a href="http://acm.hdu.edu.cn/showproblem.php?pid=1863" target="_blank" rel="external">畅通工程</a></p>
-<a id="more"></a>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> edge</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(edge x,edge y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x.c&lt;y.c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> root[<span class="number">200</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fath</span> <span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> root[x] == x ? x : root[x] = fath(root[x]);</span><br><span class="line">&#125;<span class="comment">//find the father node</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        edge s[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m; i++) &#123;</span><br><span class="line">            root[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> cost = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> edge_num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++) &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;s[i].a&gt;&gt;s[i].b&gt;&gt;s[i].c;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(s, s+n, cmp);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (edge_num == m-<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> x = fath(root[s[i].a]);</span><br><span class="line">            <span class="keyword">int</span> y = fath(root[s[i].b]);</span><br><span class="line">            <span class="keyword">if</span>(x != y) &#123;</span><br><span class="line">                root[x] = y;</span><br><span class="line">                cost += s[i].c;</span><br><span class="line">                edge_num ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (edge_num != m-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"?"</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;cost&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ol>
-<li>输入每个边</li>
-<li>将每条边按权重从小到大排序</li>
-<li>从最小的边开始遍历，如果一条边的两端点属于同一个union,即它们的根节点不一致，则将其加入边集。(使用递归寻找根节点)</li>
-<li>当边集合中元素达到点数-1时退出循环，若循环结束，边集合中元素仍未达到点数-1，则最小生成树不存在。</li>
+<ol>
+<li>首先将除0，1以外所有自然数先置为素数</li>
+<li>从2开始进入循环，并且所有数都会进入第二个for循环</li>
+<li>将每个素数与比其小(可以等与）的素数两两相乘的乘积，置为合数</li>
+<li>将每个合数与比其最小质因数小（可以等于）的素数两两相乘的乘积，置为合数。</li>
 </ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://beust.com/algorithms.pdf" target="_blank" rel="external">《Algorithms》</a> Sanjoy Dasgupta / Christos Papadimitriou / Umesh Vazirani</p>
+<p>实际操作流程如下，每一行表示一个数进入循环后，被置为合数的数</p>
+<pre><code>2*2
+3*2 3*3
+(2*2)*2
+5*2 5*3 5*5
+(3*2)*2
+......
+</code></pre><p>注意：将所有合数写成素数积的形式。<br>难点：</p>
+<ol>
+<li>如何理解能将合数全部筛出</li>
+<li>如何理解不会重复筛</li>
+</ol>
+<p>素数不会被筛出。当第一个for循环进入一个合数时，假设将该数拆为从小到大排列的质数积<code>x=a*b*c*d</code>,此时只需将不大于a的质数与x的乘积置为合数，如<code>a*a*b*c*d</code>，而类似<code>b*a*b*c*d</code>这样的数会在<code>b*b*c*d</code>时被置为合数，显然这件事情发生在<code>b*a*b*c*d</code>进入循环之前。</p>
+<p>若参考普通筛素数法（见参考），一个合数<code>x=a*b*c*d</code>在<code>a</code>进入循环时就被置为合数，后面<code>bcd</code>进入时重复置为合数，故线性筛限制了这个合数只在<code>y=b*c*d</code>进入时被置为合数，避免了重复的情况，极大地提升了效率。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://xuanwo.org/2015/03/18/number-theory-sieve-method-to-find-primes/" target="_blank" rel="external">xuanwo:数论——筛法求素数</a></p>
 
       
     </div>
@@ -337,13 +360,17 @@ HDU 1863 畅通工程">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/25/linear screen primes/" rel="next" title="线性筛素数">
-                <i class="fa fa-chevron-left"></i> 线性筛素数
+              <a href="/2016/05/03/blog build/" rel="next" title="搭建Blog基于Github pages & hexo">
+                <i class="fa fa-chevron-left"></i> 搭建Blog基于Github pages & hexo
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/03/hello world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -417,13 +444,20 @@ HDU 1863 畅通工程">
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
-              </a>
+              
             </div>
           
 
@@ -492,7 +526,7 @@ HDU 1863 畅通工程">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kruskal’s-algorithm"><span class="nav-number">1.</span> <span class="nav-text">Kruskal’s algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释"><span class="nav-number">1.2.</span> <span class="nav-text">解释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>

@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Blog build," />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -80,17 +80,16 @@
 
 
 
-<meta name="description" content="Hello WorldPeople always find it difficult to step into a strange place, so as I find in set up this “blog” and write down my first page in it.">
+<meta name="description" content="采用高效率的筛法，几乎是线性的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://stay.wiki/2016/05/03/hello world/index.html">
+<meta property="og:title" content="线性筛素数">
+<meta property="og:url" content="http://stay.wiki/2016/04/23/linear screen primes/index.html">
 <meta property="og:site_name" content="STay's Blog">
-<meta property="og:description" content="Hello WorldPeople always find it difficult to step into a strange place, so as I find in set up this “blog” and write down my first page in it.">
-<meta property="og:image" content="http://stay.wiki/images/hello world.png">
-<meta property="og:updated_time" content="2016-05-02T16:06:05.000Z">
+<meta property="og:description" content="采用高效率的筛法，几乎是线性的。">
+<meta property="og:updated_time" content="2016-05-02T16:21:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Hello WorldPeople always find it difficult to step into a strange place, so as I find in set up this “blog” and write down my first page in it.">
+<meta name="twitter:title" content="线性筛素数">
+<meta name="twitter:description" content="采用高效率的筛法，几乎是线性的。">
 
 
 
@@ -108,7 +107,7 @@
   };
 </script>
 
-  <title> Hello World | STay's Blog </title>
+  <title> 线性筛素数 | STay's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +246,7 @@
             
             
               
-                Hello World
+                线性筛素数
               
             
           </h1>
@@ -259,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T00:06:05+08:00" content="2016-05-03">
-              2016-05-03
+            <time itemprop="dateCreated" datetime="2016-04-23T00:00:00+08:00" content="2016-04-23">
+              2016-04-23
             </time>
           </span>
 
@@ -273,8 +272,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Blog-build/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog build</span>
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
                   </a>
                 </span>
 
@@ -306,9 +305,32 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>People always find it difficult to step into a strange place, so as I find in set up this “blog” and write down my first page in it.<a id="more"></a> After a noon-break time lost, I do it.</p>
-<p>So that say hi to this world using the most magic method - <strong>hello world</strong>.</p>
-<p><img src="/images/hello world.png" alt="HW"></p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>采用高效率的筛法，几乎是线性的。<a id="more"></a></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">99999</span></span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> prime[N] = &#123;<span class="number">0</span>&#125;, num_prime = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> isNotPrime[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">2</span> ; i &lt; N ; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isNotPrime[i])</span><br><span class="line">            prime[num_prime ++] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> j = <span class="number">0</span> ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            isNotPrime[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><blockquote>
+<p>已知：所有合数可以分解成素数的积，如<code>8=2*2*2</code>or<code>12=2*2*3</code>    </p>
+</blockquote>
+<ol>
+<li>首先将除0，1以外所有自然数先置为素数</li>
+<li>从2开始进入循环，并且所有数都会进入第二个for循环</li>
+<li>将每个素数与比其小(可以等与）的素数两两相乘的乘积，置为合数</li>
+<li>将每个合数与比其最小质因数小（可以等于）的素数两两相乘的乘积，置为合数。</li>
+</ol>
+<p>实际操作流程如下，每一行表示一个数进入循环后，被置为合数的数</p>
+<pre><code>2*2
+3*2 3*3
+(2*2)*2
+5*2 5*3 5*5
+(3*2)*2
+......
+</code></pre><p>注意：将所有合数写成素数积的形式。<br>难点：</p>
+<ol>
+<li>如何理解能将合数全部筛出</li>
+<li>如何理解不会重复筛</li>
+</ol>
+<p>素数不会被筛出。当第一个for循环进入一个合数时，假设将该数拆为从小到大排列的质数积<code>x=a*b*c*d</code>,此时只需将不大于a的质数与x的乘积置为合数，如<code>a*a*b*c*d</code>，而类似<code>b*a*b*c*d</code>这样的数会在<code>b*b*c*d</code>时被置为合数，显然这件事情发生在<code>b*a*b*c*d</code>进入循环之前。</p>
+<p>若参考普通筛素数法（见参考），一个合数<code>x=a*b*c*d</code>在<code>a</code>进入循环时就被置为合数，后面<code>bcd</code>进入时重复置为合数，故线性筛限制了这个合数只在<code>y=b*c*d</code>进入时被置为合数，避免了重复的情况，极大地提升了效率。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://xuanwo.org/2015/03/18/number-theory-sieve-method-to-find-primes/" target="_blank" rel="external">xuanwo:数论——筛法求素数</a></p>
 
       
     </div>
@@ -329,7 +351,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Blog-build/" rel="tag">#Blog build</a>
+            <a href="/tags/ACM/" rel="tag">#ACM</a>
           
         </div>
       
@@ -338,15 +360,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/03/linear screen primes/" rel="next" title="线性筛素数">
-                <i class="fa fa-chevron-left"></i> 线性筛素数
+              <a href="/2016/04/22/xiaomo/" rel="next" title="Hello Xiaomo">
+                <i class="fa fa-chevron-left"></i> Hello Xiaomo
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/03/MST/" rel="prev" title="最小生成树(MST)">
+              <a href="/2016/04/25/MST/" rel="prev" title="最小生成树(MST)">
                 最小生成树(MST) <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -504,7 +526,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>

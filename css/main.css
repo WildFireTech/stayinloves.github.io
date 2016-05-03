@@ -749,7 +749,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #86a697;
+  background: #fedfe1;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1393,7 +1393,7 @@ pre .javascript .function {
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
-  color: #999;
+  color: #fedfe1;
   border-bottom-color: #86a697;
 }
 .sidebar a:hover {
@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1138dd;
+  background: #ffff29;
 }
 .links-of-blogroll {
   font-size: 13px;

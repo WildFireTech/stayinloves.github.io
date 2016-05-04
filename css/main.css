@@ -181,7 +181,7 @@ th {
 }
 ::selection {
   background: #0b1013;
-  color: #a28c37;
+  color: #a66663;
 }
 body {
   position: relative;
@@ -308,7 +308,7 @@ hr {
 }
 blockquote {
   padding: 0 15px;
-  color: #fedfe1;
+  color: #a66663;
   border-left: 4px solid #ddd;
 }
 blockquote cite::before {
@@ -564,7 +564,7 @@ pre code {
   float: right;
 }
 .highlight .gutter pre {
-  color: #fedfe1;
+  color: #a66663;
   text-align: right;
   padding-right: 20px;
 }
@@ -1177,7 +1177,7 @@ pre .javascript .function {
   transition-property: background;
 }
 .posts-collapse .post-header:hover {
-  border-bottom-color: #fedfe1;
+  border-bottom-color: #a66663;
 }
 .posts-collapse .post-header:hover::before {
   background: #0b1013;
@@ -1202,7 +1202,7 @@ pre .javascript .function {
   opacity: 0.6;
 }
 .posts-collapse .post-title a {
-  color: #fedfe1;
+  color: #a66663;
   border-bottom: none;
 }
 .page-home .post-type-quote .post-header,
@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff29;
+  background: #1fd0e9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1572,11 +1572,11 @@ pre .javascript .function {
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #2ea9df;
-  border-bottom-color: #2ea9df;
+  color: #a66663;
+  border-bottom-color: #a66663;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #2ea9df;
+  color: #a66663;
 }
 .sidebar-panel {
   display: none;
@@ -1586,7 +1586,7 @@ pre .javascript .function {
 }
 .post-toc-empty {
   font-size: 14px;
-  color: #fedfe1;
+  color: #a66663;
 }
 .post-toc-wrap {
   overflow: hidden;
@@ -1635,14 +1635,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #2ea9df;
-  border-bottom-color: #2ea9df;
+  color: #a66663;
+  border-bottom-color: #a66663;
 }
 .post-toc .nav .active-current > a {
-  color: #2ea9df;
+  color: #a66663;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #2ea9df;
+  color: #a66663;
 }
 .footer {
   font-size: 14px;
@@ -2091,7 +2091,7 @@ a.search-result {
   padding-left: 10px;
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #2ea9df;
+  background: #a66663;
 }
 .page-post-detail .comments {
   overflow: hidden;

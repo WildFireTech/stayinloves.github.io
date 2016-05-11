@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ACM," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -80,25 +80,16 @@
 
 
 
-<meta name="description" content="Kruskal’s algorithm
-A greedy algorithm.
-
-HDU 1863 畅通工程">
+<meta name="description" content="三月，再次返京的火车上，别离的气氛格外的伤感。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最小生成树(MST)">
-<meta property="og:url" content="http://stay.wiki/2016/04/25/MST/index.html">
+<meta property="og:title" content="无题">
+<meta property="og:url" content="http://stay.wiki/2016/05/11/dead/index.html">
 <meta property="og:site_name" content="STay's Blog">
-<meta property="og:description" content="Kruskal’s algorithm
-A greedy algorithm.
-
-HDU 1863 畅通工程">
-<meta property="og:updated_time" content="2016-05-02T16:21:21.000Z">
+<meta property="og:description" content="三月，再次返京的火车上，别离的气氛格外的伤感。">
+<meta property="og:updated_time" content="2016-05-11T10:00:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最小生成树(MST)">
-<meta name="twitter:description" content="Kruskal’s algorithm
-A greedy algorithm.
-
-HDU 1863 畅通工程">
+<meta name="twitter:title" content="无题">
+<meta name="twitter:description" content="三月，再次返京的火车上，别离的气氛格外的伤感。">
 
 
 
@@ -116,7 +107,7 @@ HDU 1863 畅通工程">
   };
 </script>
 
-  <title> 最小生成树(MST) | STay's Blog </title>
+  <title> 无题 | STay's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +256,7 @@ HDU 1863 畅通工程">
             
             
               
-                最小生成树(MST)
+                无题
               
             
           </h1>
@@ -277,38 +268,19 @@ HDU 1863 畅通工程">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-25T00:00:00+08:00" content="2016-04-25">
-              2016-04-25
+            <time itemprop="dateCreated" datetime="2016-05-11T18:00:08+08:00" content="2016-05-11">
+              2016-05-11
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/25/MST/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/MST/" itemprop="commentsCount"></span>
+                <a href="/2016/05/11/dead/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/11/dead/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,19 +303,7 @@ HDU 1863 畅通工程">
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="Kruskal’s-algorithm"><a href="#Kruskal’s-algorithm" class="headerlink" title="Kruskal’s algorithm"></a>Kruskal’s algorithm</h1><blockquote>
-<p>A greedy algorithm.</p>
-</blockquote>
-<p>HDU 1863 <a href="http://acm.hdu.edu.cn/showproblem.php?pid=1863" target="_blank" rel="external">畅通工程</a></p>
-<a id="more"></a>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> edge</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(edge x,edge y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x.c&lt;y.c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> root[<span class="number">200</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fath</span> <span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> root[x] == x ? x : root[x] = fath(root[x]);</span><br><span class="line">&#125;<span class="comment">//find the father node</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        edge s[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m; i++) &#123;</span><br><span class="line">            root[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> cost = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> edge_num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++) &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;s[i].a&gt;&gt;s[i].b&gt;&gt;s[i].c;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(s, s+n, cmp);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (edge_num == m-<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> x = fath(root[s[i].a]);</span><br><span class="line">            <span class="keyword">int</span> y = fath(root[s[i].b]);</span><br><span class="line">            <span class="keyword">if</span>(x != y) &#123;</span><br><span class="line">                root[x] = y;</span><br><span class="line">                cost += s[i].c;</span><br><span class="line">                edge_num ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (edge_num != m-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"?"</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;cost&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ol>
-<li>输入每个边</li>
-<li>将每条边按权重从小到大排序</li>
-<li>从最小的边开始遍历，如果一条边的两端点属于同一个union,即它们的根节点不一致，则将其加入边集。(使用递归寻找根节点)</li>
-<li>当边集合中元素达到点数-1时退出循环，若循环结束，边集合中元素仍未达到点数-1，则最小生成树不存在。</li>
-</ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://beust.com/algorithms.pdf" target="_blank" rel="external">《Algorithms》</a> Sanjoy Dasgupta / Christos Papadimitriou / Umesh Vazirani</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>三月，再次返京的火车上，别离的气氛格外的伤感。<a id="more"></a>二月底住进医院的外公在三月初与世长辞，全家人伤心欲绝。车上，同行的哥哥和我说道：“每次身边有重要的人离去，总会让人再次思考哲学上的问题。”是啊，人为什么又是怎么来到这个世上？人是否会有灵魂遗留？若有或没有，我们又该如果看待死亡。从古至今，这个问题一直困扰着人们。<br>现代医学的发展让人的生命大大延长。以往的时空中，一个感冒，头疼脑热，就能在短暂的时间内夺取人们的生命。穷人，千辛万苦去山上采集草药，也许也无济于事。富人，也无法多苟活几天。<br>在最后的那段日子里，病房里插着各种管，各种设备，翻身如厕都让人头疼，更遑论眼神紧盯心跳仪的紧张。然而，这些努力最后也无济于事。那段日子里，我曾痛恨自己，没有能力保护好身边的人，没有能力给予他最好的医疗陪护条件，自己的离开也几似逃离。但后来，我才发现自己可能只是向往那种一掷千金的能力，只是在安慰自己似乎有了这种能力就能逃避生命中的必然。<br>在当下，我们都面临着时代的大变化，没有前人的例子借鉴，我们只能自己做出选择。西方世界，渐渐发展出临终关怀等相关理论。坦言，我现在仍是抗拒的。我甚至还怀疑着这是不是某些人为稀缺的医疗资源想出的利己的分配方案。对此，我会研究相关理论，进行更深入地了解。<br>但有一点是毋庸置疑的，我们都认同这世间有一些东西比生命更有价值。或言事业，或言尊严。<br>也许人类永远搞不清楚生存的意义，永远搞不清楚死亡的意义。但我想只要我们存在一天，就会无尽地问下去。<br>愿外公在何处快乐，我心永系。</p>
 
       
     </div>
@@ -362,28 +322,18 @@ HDU 1863 畅通工程">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ACM/" rel="tag">#ACM</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/23/linear-screen-primes/" rel="next" title="线性筛素数">
-                <i class="fa fa-chevron-left"></i> 线性筛素数
+              <a href="/2016/05/10/shanshui/" rel="next" title="山水一程">
+                <i class="fa fa-chevron-left"></i> 山水一程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/04/Blog-beautify/" rel="prev" title="Blog个性化">
-                Blog个性化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +496,7 @@ HDU 1863 畅通工程">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kruskal’s-algorithm"><span class="nav-number">1.</span> <span class="nav-text">Kruskal’s algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释"><span class="nav-number">1.2.</span> <span class="nav-text">解释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -666,9 +616,9 @@ HDU 1863 畅通工程">
 
     <script type="text/javascript">
       var disqus_shortname = 'stayinloves';
-      var disqus_identifier = '2016/04/25/MST/';
-      var disqus_title = '最小生成树(MST)';
-      var disqus_url = 'http://stay.wiki/2016/04/25/MST/';
+      var disqus_identifier = '2016/05/11/dead/';
+      var disqus_title = '无题';
+      var disqus_url = 'http://stay.wiki/2016/05/11/dead/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

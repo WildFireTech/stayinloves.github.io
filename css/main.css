@@ -1,3 +1,6 @@
+body {
+  font-weight: lighter;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -190,7 +193,6 @@ body {
   line-height: 2;
   color: #86a697;
   background: #0b1013;
-  font-weight:300;
 }
 @media (max-width: 767px) {
   body {
@@ -1535,7 +1537,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #faff9e;
+  background: #e75318;
 }
 .links-of-blogroll {
   font-size: 13px;

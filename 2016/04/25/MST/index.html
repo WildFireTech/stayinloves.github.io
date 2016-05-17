@@ -47,13 +47,19 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Slabo 27px:300,300italic,400,400italic,700,700italic|Amatic SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -92,7 +98,7 @@ HDU 1863 畅通工程">
 A greedy algorithm.
 
 HDU 1863 畅通工程">
-<meta property="og:updated_time" content="2016-05-02T16:21:21.000Z">
+<meta property="og:updated_time" content="2016-05-17T12:30:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最小生成树(MST)">
 <meta name="twitter:description" content="Kruskal’s algorithm
@@ -341,7 +347,7 @@ HDU 1863 畅通工程">
 <li>输入每个边</li>
 <li>将每条边按权重从小到大排序</li>
 <li>从最小的边开始遍历，如果一条边的两端点属于同一个union,即它们的根节点不一致，则将其加入边集。(使用递归寻找根节点)</li>
-<li>当边集合中元素达到点数-1时退出循环，若循环结束，边集合中元素仍未达到点数-1，则最小生成树不存在。</li>
+<li>当边集合中元素达到点数-1时退出循环.遍历所有点后循环结束，若此时边集合中元素仍未达到点数-1，则最小生成树不存在。</li>
 </ol>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://beust.com/algorithms.pdf" target="_blank" rel="external">《Algorithms》</a> Sanjoy Dasgupta / Christos Papadimitriou / Umesh Vazirani</p>
 

@@ -220,6 +220,7 @@ h6 {
   font-weight: bold;
   line-height: 1.5;
   font-family: 'Slabo 27px', "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #a66663;
 }
 h2,
 h3,
@@ -1534,7 +1535,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #98ffdb;
+  background: #e9b6f6;
 }
 .links-of-blogroll {
   font-size: 13px;

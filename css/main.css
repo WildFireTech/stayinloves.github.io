@@ -664,7 +664,7 @@ pre .javascript .function {
   display: block;
   width: 100%;
   height: 24px;
-  opacity: 0.2;
+  opacity: 0.8;
   background-repeat: no-repeat;
   background-position: 0 -6px;
   background-size: 22px 22px;
@@ -672,17 +672,16 @@ pre .javascript .function {
 .blockquote-center::before,
 .page-home .post-type-quote blockquote::before,
 .page-post-detail .post-type-quote blockquote::before {
-  top: -20px;
+  top: -39px;
   background-image: url("../images/quote-l.svg");
-  border-top: 1px solid #ccc;
+  background-position: center;
 }
 .blockquote-center::after,
 .page-home .post-type-quote blockquote::after,
 .page-post-detail .post-type-quote blockquote::after {
-  bottom: -20px;
+  bottom: -39px;
   background-image: url("../images/quote-r.svg");
-  border-bottom: 1px solid #ccc;
-  background-position: 100% 8px;
+  background-position: center;
 }
 .blockquote-center p,
 .page-home .post-type-quote blockquote p,
@@ -852,7 +851,7 @@ pre .javascript .function {
   background: #0b1013;
   font-size: 12px;
   opacity: 1;
-  color: #fff;
+  color: #fedfe1;
   cursor: pointer;
   text-align: center;
   -webkit-transform: translateZ(0);
@@ -860,11 +859,6 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-}
-@media (max-width: 767px) {
-  .back-to-top {
-    display: none;
-  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .back-to-top {
@@ -1093,7 +1087,6 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: auto;
   padding: 3px;
-  border: 1px solid #ddd;
 }
 .posts-expand .fancybox img {
   margin: 0 auto;
@@ -1358,7 +1351,7 @@ pre .javascript .function {
   text-align: center;
 }
 .post:last-child .post-eof.post-eof.post-eof {
-  display: none;
+  display: block;
 }
 .post-gallery {
   display: table;
@@ -1537,7 +1530,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff1a;
+  background: #fffff7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1663,7 +1656,7 @@ pre .javascript .function {
 }
 .powered-by,
 .theme-info {
-  display: inline-block;
+  display: none;
 }
 .powered-by {
   margin-right: 10px;
@@ -1673,11 +1666,11 @@ pre .javascript .function {
   padding-left: 10px;
 }
 .cc-license {
-  margin-top: 10px;
+  margin-top: 500px;
   text-align: center;
 }
 .cc-license .cc-opacity {
-  opacity: 0.7;
+  opacity: 0.5;
   border-bottom: none;
 }
 .cc-license .cc-opacity:hover {

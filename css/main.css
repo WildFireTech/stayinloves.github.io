@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffaf85;
+  background: #ffffb6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1670,7 +1670,7 @@ pre .javascript .function {
   padding-left: 10px;
 }
 .cc-license {
-  margin-top: 500px;
+  margin-top: 300px;
   text-align: center;
 }
 .cc-license .cc-opacity {

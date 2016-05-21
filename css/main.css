@@ -870,6 +870,10 @@ pre .javascript .function {
 }
 .header {
   background: #86a697;
+  background-color: #86a697;
+  background-image: url("/images/pattern.png");
+  background-attachment: fixed;
+  background-size: 150%;
 }
 .header-inner {
   position: relative;
@@ -1530,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffff7;
+  background: #ffaf85;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2125,15 +2129,14 @@ a.search-result {
     left: 0;
     top: 52px;
     margin: 0;
-    width: 100%;
+    width: 24%;
     padding: 0;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+    background: #0b1013;
   }
 }
 @media (max-width: 767px) {
   .menu {
-    text-align: left;
+    text-align: center;
   }
 }
 @media (max-width: 767px) {

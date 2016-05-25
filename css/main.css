@@ -838,8 +838,13 @@ pre .javascript .function {
   text-align: center;
 }
 .tag-cloud a {
-  display: inline-block;
+  display: block;
   margin: 20px;
+}
+.widget-tagcloud {
+  top: 100px;
+  display: block;
+  height: 1000px;
 }
 .back-to-top {
   box-sizing: border-box;
@@ -1535,7 +1540,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8cff;
+  background: #7c46bb;
 }
 .links-of-blogroll {
   font-size: 13px;

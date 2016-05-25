@@ -21,10 +21,10 @@
 window.onload = function() {
     try {
         TagCanvas.textFont = 'Trebuchet MS, Helvetica, sans-serif';
-        TagCanvas.textColour = '#333';
+        TagCanvas.textColour = '#FEDFE1';
         TagCanvas.textHeight = 25;
         TagCanvas.outlineMethod = 'block';
-        TagCanvas.outlineColour = '#E2E1C1';
+        TagCanvas.outlineColour = '#FEDFE1';
         TagCanvas.maxSpeed = 0.03;
         TagCanvas.minBrightness = 0.2;
         TagCanvas.depth = 0.92;

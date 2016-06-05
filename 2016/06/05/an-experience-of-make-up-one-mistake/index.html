@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git,hexo," />
 
 
 
@@ -86,15 +86,16 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="STay's Blog">
-<meta property="og:url" content="http://stay.wiki/tags/母亲节/index.html">
+<meta name="description" content="众所周知，我一直使用hexo和github维护这个博客。然而由于技术水平捉鸡，常常出现问题。这次的问题是误删了.git文件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次git错误操作的经历">
+<meta property="og:url" content="http://stay.wiki/2016/06/05/an-experience-of-make-up-one-mistake/index.html">
 <meta property="og:site_name" content="STay's Blog">
-<meta property="og:description">
+<meta property="og:description" content="众所周知，我一直使用hexo和github维护这个博客。然而由于技术水平捉鸡，常常出现问题。这次的问题是误删了.git文件。">
+<meta property="og:updated_time" content="2016-06-05T15:13:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STay's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="一次git错误操作的经历">
+<meta name="twitter:description" content="众所周知，我一直使用hexo和github维护这个博客。然而由于技术水平捉鸡，常常出现问题。这次的问题是误删了.git文件。">
 
 
 
@@ -112,7 +113,7 @@
   };
 </script>
 
-  <title> 标签: 母亲节 | STay's Blog </title>
+  <title> 一次git错误操作的经历 | STay's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,7 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,46 +241,160 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        母亲节
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                一次git错误操作的经历
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-05T23:13:21+08:00" content="2016-06-05">
+              2016-06-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/05/an-experience-of-make-up-one-mistake/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/05/an-experience-of-make-up-one-mistake/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>众所周知，我一直使用hexo和github维护这个博客。然而由于技术水平捉鸡，常常出现问题。这次的问题是误删了<code>.git</code>文件。<a id="more"></a></p>
+<p>一个月黑风高的夜晚，刚刚扯完一篇博文的我按例上传到github。上传过程相较以往略显冗长，我很快失去了等待的耐心，按下了<code>Ctrl+C</code>，这是进程的结束，也是悲剧的开始。</p>
+<p>重启进程后，数据一直上传不上去。我先是检查了网络问题，又重新生成了一遍，都无济于事。</p>
+<p>这时机智的我发现了根目录下有一个叫<code>.deploy_git</code>的文件。这个文件一直没有删过，是不是因为这个文件没有初始化才让上传出错。于是我果断点了一下delete，进一步走向了悲剧的深渊。</p>
+<p>再重新生成部署时，屏幕上显示出了一行惊悚的字幕:Nothing to commit.<br>gg</p>
+<p>这时我灵光一闪，不要慌，苹果大法好。Time machine走起，打开备份的我再次懵逼，怎么什么都没有?哦，当时把文件初始化在系统根目录下，后来因为一直要修改权限太麻烦于是把文件移到了<code>Music</code>文件夹(擦干泪，不要问，为什么)，然而<code>Music</code>文件夹太大，我没有让Time machine备份!</p>
+<p>事实已经很明显，摆在眼前的只有一条路，重新git clone。花了100多M再加上1个小时的心酸在此不诉。</p>
+<p>后来阅读了git-deploy插件的说明，确定可以把remote rope的<code>.git</code>文件移到<code>.deploy_git</code>里，后执行，成功。</p>
+<p>事实证明只会用不懂原理是捉鸡的。再次打出gg，并老老实实地在Time machine里加上了这个目录。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+    
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/05/08/Mom/" itemprop="url">
-              
-                <span itemprop="name">Happy Mom's Day</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-08T11:28:12+08:00"
-              content="2016-05-08" >
-          05-08
-        </time>
-      </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+        </div>
+      
 
-    </header>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/05/we-are-not-nerd/" rel="next" title="We Are't Nerd -《社交网络》影评">
+                <i class="fa fa-chevron-left"></i> We Are't Nerd -《社交网络》影评
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/05/google-ipo-letter/" rel="prev" title="Google IPO Letter">
+                Google IPO Letter <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -287,6 +402,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -306,8 +432,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/logo.png"
@@ -406,6 +541,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -501,6 +647,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -517,9 +667,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'stayinloves';
-      var disqus_identifier = 'tags/母亲节/index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2016/06/05/an-experience-of-make-up-one-mistake/';
+      var disqus_title = '一次git错误操作的经历';
+      var disqus_url = 'http://stay.wiki/2016/06/05/an-experience-of-make-up-one-mistake/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -530,6 +680,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   

@@ -1354,10 +1354,10 @@ pre .javascript .function {
 }
 .posts-expand .post-eof {
   display: block;
-  margin: 80px auto 60px;
-  width: 100%;
+  margin: 160px auto 60px;
+  width: 90%;
   height: 1px;
-  background: #ccc;
+  background: #35413e;
   text-align: center;
 }
 .post:last-child .post-eof.post-eof.post-eof {
@@ -1540,7 +1540,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #03ff9f;
+  background: #9a28d9;
 }
 .links-of-blogroll {
   font-size: 13px;

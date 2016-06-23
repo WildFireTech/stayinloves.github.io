@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ACM," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,16 +86,22 @@
 
 
 
-<meta name="description" content="采用高效率的筛法，几乎是线性的。">
+<meta name="description" content="OKR(Objectives-And-Key-Results)
+
+It is a method of defining and tracking objectives and their outcomes.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性筛素数">
-<meta property="og:url" content="http://stay.wiki/2016/04/23/linear-screen-primes/index.html">
+<meta property="og:title" content="Objectives-And-Key-Results">
+<meta property="og:url" content="http://stay.wiki/2019/06/23/Objectives-And-Key-Results/index.html">
 <meta property="og:site_name" content="STay's Blog">
-<meta property="og:description" content="采用高效率的筛法，几乎是线性的。">
-<meta property="og:updated_time" content="2016-05-23T10:57:15.000Z">
+<meta property="og:description" content="OKR(Objectives-And-Key-Results)
+
+It is a method of defining and tracking objectives and their outcomes.">
+<meta property="og:updated_time" content="2016-06-23T05:23:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性筛素数">
-<meta name="twitter:description" content="采用高效率的筛法，几乎是线性的。">
+<meta name="twitter:title" content="Objectives-And-Key-Results">
+<meta name="twitter:description" content="OKR(Objectives-And-Key-Results)
+
+It is a method of defining and tracking objectives and their outcomes.">
 
 
 
@@ -113,7 +119,7 @@
   };
 </script>
 
-  <title> 线性筛素数 | STay's Blog </title>
+  <title> Objectives-And-Key-Results | STay's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +268,7 @@
             
             
               
-                线性筛素数
+                Objectives-And-Key-Results
               
             
           </h1>
@@ -274,38 +280,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T00:00:00+08:00" content="2016-04-23">
-              2016-04-23
+            <time itemprop="dateCreated" datetime="2019-06-23T13:22:38+08:00" content="2019-06-23">
+              2019-06-23
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/23/linear-screen-primes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/linear-screen-primes/" itemprop="commentsCount"></span>
+                <a href="/2019/06/23/Objectives-And-Key-Results/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/23/Objectives-And-Key-Results/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -328,32 +315,41 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>采用高效率的筛法，几乎是线性的。<a id="more"></a></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">99999</span></span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> prime[N] = &#123;<span class="number">0</span>&#125;, num_prime = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> isNotPrime[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">2</span> ; i &lt; N ; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isNotPrime[i])</span><br><span class="line">            prime[num_prime ++] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> j = <span class="number">0</span> ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            isNotPrime[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><blockquote>
-<p>已知：所有合数可以分解成素数的积，如<code>8=2*2*2</code>or<code>12=2*2*3</code>    </p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><p>OKR(Objectives-And-Key-Results)</p>
+<blockquote>
+<p>It is a method of defining and tracking objectives and their outcomes.</p>
 </blockquote>
-<ol>
-<li>首先将除0，1以外所有自然数先置为素数</li>
-<li>从2开始进入循环，并且所有数都会进入第二个for循环</li>
-<li>将每个素数与比其小(可以等与）的素数两两相乘的乘积，置为合数</li>
-<li>将每个合数与比其最小质因数小（可以等于）的素数两两相乘的乘积，置为合数。</li>
-</ol>
-<p>实际操作流程如下，每一行表示一个数进入循环后，被置为合数的数</p>
-<pre><code>2*2
-3*2 3*3
-(2*2)*2
-5*2 5*3 5*5
-(3*2)*2
-......
-</code></pre><p>注意：将所有合数写成素数积的形式。<br>难点：</p>
-<ol>
-<li>如何理解能将合数全部筛出</li>
-<li>如何理解不会重复筛</li>
-</ol>
-<p>素数不会被筛出。当第一个for循环进入一个合数时，假设将该数拆为从小到大排列的质数积<code>x=a*b*c*d</code>,此时只需将不大于a的质数与x的乘积置为合数，如<code>a*a*b*c*d</code>，而类似<code>b*a*b*c*d</code>这样的数会在<code>b*b*c*d</code>时被置为合数，显然这件事情发生在<code>b*a*b*c*d</code>进入循环之前。</p>
-<p>若参考普通筛素数法（见参考），一个合数<code>x=a*b*c*d</code>在<code>a</code>进入循环时就被置为合数，后面<code>bcd</code>进入时重复置为合数，故线性筛限制了这个合数只在<code>y=b*c*d</code>进入时被置为合数，避免了重复的情况，极大地提升了效率。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://xuanwo.org/2015/03/18/number-theory-sieve-method-to-find-primes/" target="_blank" rel="external">xuanwo:数论——筛法求素数</a></p>
+<a id="more"></a>
+<p><strong>Summer Vacation OKR</strong></p>
+<h1 id="ACM"><a href="#ACM" class="headerlink" title="ACM"></a>ACM</h1><h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>阅读算法基础，代码实现</p>
+<h2 id="Clang"><a href="#Clang" class="headerlink" title="Clang"></a>Clang</h2><ul>
+<li>K&amp;R 阅读剩余章节内容</li>
+<li>Cpp 重点学习STL</li>
+</ul>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>阅读Head First，入门</p>
+<h2 id="日常训练"><a href="#日常训练" class="headerlink" title="日常训练"></a>日常训练</h2><p>完成日常题目，难题题解，统计</p>
+<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000" target="_blank" rel="external">Javascript教程</a></li>
+<li>node.js</li>
+<li>犀牛书</li>
+<li>精粹 (Later focus)</li>
+</ul>
+<h2 id="Html-CSS"><a href="#Html-CSS" class="headerlink" title="Html/CSS"></a>Html/CSS</h2><p>阅读Head First，入门</p>
+<h1 id="READ"><a href="#READ" class="headerlink" title="READ"></a>READ</h1><h2 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h2><p>wanqu.co每天两篇左右</p>
+<h2 id="Book"><a href="#Book" class="headerlink" title="Book"></a>Book</h2><ul>
+<li><a href="https://book.douban.com/subject/1196945/" target="_blank" rel="external">集体行动的逻辑</a></li>
+<li><a href="https://book.douban.com/subject/26576861/" target="_blank" rel="external">Being Mortal</a></li>
+<li><a href="http://www.ituring.com.cn/book/1501" target="_blank" rel="external">Linus</a></li>
+<li><a href="https://book.douban.com/subject/1786387/" target="_blank" rel="external">影响力</a></li>
+<li><a href="https://book.douban.com/subject/3227098/" target="_blank" rel="external">编程珠玑</a></li>
+<li><a href="https://book.douban.com/subject/3004255/" target="_blank" rel="external">编程之美</a></li>
+</ul>
+<p>按顺序阅读，并写读后感。</p>
+<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><ul>
+<li>ACM %60</li>
+<li>WEB %30</li>
+<li>Read %10 (Later focus)</li>
+</ul>
 
       
     </div>
@@ -372,28 +368,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ACM/" rel="tag">#ACM</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/22/xiaomo/" rel="next" title="Hello Xiaomo">
-                <i class="fa fa-chevron-left"></i> Hello Xiaomo
+              <a href="/2016/06/05/google-ipo-letter/" rel="next" title="Google IPO Letter">
+                <i class="fa fa-chevron-left"></i> Google IPO Letter
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/25/MST/" rel="prev" title="最小生成树(MST)">
-                最小生成树(MST) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -562,7 +548,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ACM"><span class="nav-number">1.</span> <span class="nav-text">ACM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clang"><span class="nav-number">1.2.</span> <span class="nav-text">Clang</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.3.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常训练"><span class="nav-number">1.4.</span> <span class="nav-text">日常训练</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WEB"><span class="nav-number">2.</span> <span class="nav-text">WEB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS"><span class="nav-number">2.1.</span> <span class="nav-text">JS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html-CSS"><span class="nav-number">2.2.</span> <span class="nav-text">Html/CSS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#READ"><span class="nav-number">3.</span> <span class="nav-text">READ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Blog"><span class="nav-number">3.1.</span> <span class="nav-text">Blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Book"><span class="nav-number">3.2.</span> <span class="nav-text">Book</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Outline"><span class="nav-number">4.</span> <span class="nav-text">Outline</span></a></li></ol></div>
             
           </div>
         </section>
@@ -682,9 +668,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'stayinloves';
-      var disqus_identifier = '2016/04/23/linear-screen-primes/';
-      var disqus_title = '线性筛素数';
-      var disqus_url = 'http://stay.wiki/2016/04/23/linear-screen-primes/';
+      var disqus_identifier = '2019/06/23/Objectives-And-Key-Results/';
+      var disqus_title = 'Objectives-And-Key-Results';
+      var disqus_url = 'http://stay.wiki/2019/06/23/Objectives-And-Key-Results/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

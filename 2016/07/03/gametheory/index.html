@@ -59,7 +59,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Slabo 27px:300,300italic,400,400italic,700,700italic|Amatic SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.useso.com/css?family=Slabo 27px:300,300italic,400,400italic,700,700italic|Amatic SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://stay.wiki/2016/07/03/gametheory/index.html">
 <meta property="og:site_name" content="STay's Blog">
 <meta property="og:description" content="假期集训题整理系列">
-<meta property="og:updated_time" content="2016-07-02T18:04:05.000Z">
+<meta property="og:updated_time" content="2016-07-10T19:19:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博弈论">
 <meta name="twitter:description" content="假期集训题整理系列">
@@ -226,9 +226,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -359,6 +382,8 @@
 <p>将两两组合，若棋子数奇数则将原点视为一个棋子。两两之间的距离作为nim博弈中的石子数。</p>
 <p>nim博弈的子数只能减小不能增加，此题棋子之间的距离虽然会增加，但是增加后作为对手可以马上做抵消操作。若是纯粹的nim博弈，一增一减就会死循环。但此题中因为增加的机会不是无穷无尽的，所以不会死循。</p>
 <pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> s[<span class="number">1010</span>], x[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t,n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;t)</span><br><span class="line">        <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;s[i];</span><br><span class="line">            sort(s, s+n);   <span class="comment">//按照题意应该无需排序，但实测会wa</span></span><br><span class="line">            <span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                x[<span class="number">0</span>] = s[<span class="number">0</span>] - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>; i &lt; n; i += <span class="number">2</span>)</span><br><span class="line">                    x[j++] = s[i+<span class="number">1</span>] - s[i] - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i += <span class="number">2</span>)</span><br><span class="line">                    x[j++] = s[i+<span class="number">1</span>] - s[i] - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> k = x[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; (n+<span class="number">1</span>)/<span class="number">2</span>; ++i)</span><br><span class="line">                k = k ^ x[i];</span><br><span class="line">            <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">"Bob will win"</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">"Georgia will win"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">#define eps 1e-8</span><br><span class="line">inline int sgn(const double &amp;x) &#123; return x &lt; -eps ? -1 : x &gt; eps; &#125;</span><br><span class="line">struct point &#123;</span><br><span class="line">    double x, y;</span><br><span class="line">    point(const double &amp;x = 0, const double &amp;y = 0): x(x), y(y) &#123;&#125;</span><br><span class="line">    friend point operator +  (const point  &amp;a, const point  &amp;b) &#123; return point(a.x + b.x, a.y + b.y); &#125;</span><br><span class="line">    friend point operator - (const point &amp;a, const point &amp; b) &#123;return point(a.x - b.x, a.y - b.y);&#125;</span><br><span class="line">    friend point operator *  (const point  &amp;a, const double &amp;b) &#123; return point(a.x * b, a.y * b); &#125;</span><br><span class="line">    friend point operator /  (const point  &amp;a, const double &amp;b) &#123; return point(a.x / b, a.y / b); &#125;</span><br><span class="line">    friend bool operator == (const point  &amp;a, const point  &amp;b)</span><br><span class="line">    &#123; return !sgn(a.x - b.x) &amp;&amp; !sgn(a.y - b.y); &#125;</span><br><span class="line">    friend bool operator &lt;  (const point  &amp;a, const point  &amp;b)</span><br><span class="line">    &#123; return sgn(a.x - b.x) &lt; 0 || (sgn(a.x - b.x) == 0 &amp;&amp; sgn(a.y - b.y) &lt; 0); &#125;</span><br><span class="line">    friend double det(const point &amp;a, const point &amp;b)   &#123;return a.x * b.y - a.y * b.x;&#125;</span><br><span class="line">    int in()</span><br><span class="line">    &#123;</span><br><span class="line">        return ~scanf("%lf%lf", &amp;x, &amp;y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">struct line &#123;</span><br><span class="line">    point s, t;</span><br><span class="line">    line(const point &amp;s = point(), const point &amp;t = point()): s(s), t(t) &#123;&#125;</span><br><span class="line">    point vec() const   //方向向量</span><br><span class="line">    &#123;</span><br><span class="line">        return t - s;</span><br><span class="line">    &#125;</span><br><span class="line">    int relation(const point &amp;p)    //三种返回值2 0 1分别表示在ts的右侧，线上，左侧</span><br><span class="line">    &#123;</span><br><span class="line">        double res = det(t - s, p - s);</span><br><span class="line">        return res &lt; -eps ? 2 : res &lt; eps;</span><br><span class="line">    &#125;</span><br><span class="line">    bool sameside(const point &amp;p1, const point &amp; p2)    //点是否在线的同一边</span><br><span class="line">    &#123;</span><br><span class="line">        return relation(p1) == relation(p2);</span><br><span class="line">    &#125;</span><br><span class="line">    friend bool parallel (const line &amp;l1, const line &amp;l2)</span><br><span class="line">    &#123;</span><br><span class="line">        return !sgn(det(l1.vec(), l2.vec()));</span><br><span class="line">    &#125;</span><br><span class="line">    friend point intersection_line_line(const line &amp;l1, const line &amp;l2) //返回直线与直线的交点</span><br><span class="line">    &#123;</span><br><span class="line">        double s1 = det(l1.s - l2.s, l2.vec());</span><br><span class="line">        double s2 = det(l1.t - l2.s, l2.vec());</span><br><span class="line">        return (l1.t * s1 / (s1 - s2) - l1.s * s2 / (s1 - s2));</span><br><span class="line">    &#125;</span><br><span class="line">    bool is_point_seg(const point &amp;p) const //点p是否在线段上</span><br><span class="line">    &#123;</span><br><span class="line">        return sgn(det(p - s, t - s)) == 0;</span><br><span class="line">    &#125;</span><br><span class="line">    friend bool is_seg_seg(line l1, line l2)    //线段与线段是否相交</span><br><span class="line">    &#123;</span><br><span class="line">        if (!sgn(det(l2.s - l1.s, l1.vec())) &amp;&amp; !sgn(det(l2.t - l1.s, l1.vec()))) &#123;</span><br><span class="line">            return l1.is_point_seg(l2.s) || l1.is_point_seg(l2.t) || l2.is_point_seg(l1.s) || l2.is_point_seg(l1.t);</span><br><span class="line">        &#125;</span><br><span class="line">        return !l1.sameside(l2.s, l2.t) &amp;&amp; !l2.sameside(l1.s, l1.t);</span><br><span class="line">    &#125;</span><br><span class="line">    bool in() &#123;return s.in() &amp;&amp; t.in();&#125;</span><br><span class="line">&#125;;</span><br><span class="line">bool fuck (point a, point b)//被压在下的部分是否被完全挡住</span><br><span class="line">&#123;</span><br><span class="line">    if (a.x &gt;= 0 &amp;&amp; b.x &gt;= a.x &amp;&amp; det(a, b) &gt;= 0) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125; else if (a.x &lt;= 0 &amp;&amp; b.x &lt;= a.x &amp;&amp; det(a, b) &lt;= 0)</span><br><span class="line">        return 1;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //tutututututtututututututututututututtutu!!!!!!!</span><br><span class="line">    line a, b;</span><br><span class="line">    point p;</span><br><span class="line">    int O_O;</span><br><span class="line">    cin &gt;&gt; O_O;</span><br><span class="line">    while (O_O--) &#123;</span><br><span class="line">        a.in(), b.in();</span><br><span class="line">        if (!is_seg_seg(a, b) || parallel(a, b)) &#123;</span><br><span class="line">            puts("0.00");</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (a.s.y &gt; a.t.y)</span><br><span class="line">            swap(a.s, a.t);</span><br><span class="line">        if (b.s.y &gt; b.t.y)</span><br><span class="line">            swap(b.s, b.t);</span><br><span class="line">        point intersecAB = intersection_line_line(a, b);</span><br><span class="line">        double ans = 0;</span><br><span class="line">        if (a.t.y &lt; b.t.y) &#123;</span><br><span class="line">            point lowerA = a.t;</span><br><span class="line">            lowerA.x += 1000;</span><br><span class="line">            line paraA(lowerA, a.t);    //过两条直线在上方的端点中较低的端点作平行x轴的直线，此处为a，下同理</span><br><span class="line">            if (parallel(b, paraA) || fuck(a.t - intersecAB, b.t - intersecAB)) &#123;   //坑</span><br><span class="line">                puts("0.00");</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            point intersecParaB = intersection_line_line(b, paraA); //求交点</span><br><span class="line">            ans = fabs(det (intersecAB - a.t, intersecParaB - a.t)) / 2;    //求三角形面积</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            point lowerB = b.t;</span><br><span class="line">            lowerB.x += 1000;</span><br><span class="line">            line paraB(lowerB, b.t);</span><br><span class="line">            if (parallel(paraB, a) || fuck(b.t - intersecAB, a.t - intersecAB)) &#123;</span><br><span class="line">                puts("0.00");</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            point intersecParaA = intersection_line_line(a, paraB);</span><br><span class="line">            ans = fabs(det(intersecAB - b.t, intersecParaA - b.t)) / 2;</span><br><span class="line">        &#125;</span><br><span class="line">        if (ans &lt; eps) &#123;</span><br><span class="line">            puts("0.00");</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            printf("%.2f\n", ans + eps);    //坑</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre>
       
     </div>
@@ -475,7 +500,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -492,7 +517,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -712,6 +737,135 @@
 
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   

@@ -1540,7 +1540,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffee1d;
+  background: #a14428;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1978,11 +1978,11 @@ a.search-result {
   top: 10%;
   left: 50%;
   width: 700px;
-  height: 80%;
+  height: 40%;
   margin-left: -350px;
   padding: 3px 0 0 10px;
-  background: #fff;
-  color: #333;
+  background: #05181f;
+  color: #1f8173;
   z-index: 9999;
   border-radius: 5px;
 }

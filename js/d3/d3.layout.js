@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script>(function(){d3.layout = {};
+(function(){d3.layout = {};
 // Implements hierarchical edge bundling using Holten's algorithm. For each
 // input link, a path is computed that travels through the tree, up the parent
 // hierarchy to the least common ancestor, and then back down to the destination
@@ -958,7 +958,253 @@ d3.layout.histogram = function() {
     // Fill the bins, ignoring values outside the range.
     i = -1; while(++i < n) {
       x = values[i];
-      if ((x >= range[0]) && (x <= 1="" 2="" range[1]))="" {="" bin="bins[d3.bisect(thresholds," x,="" 1,="" m)="" -="" 1];="" bin.y="" +="k;" bin.push(data[i]);="" }="" return="" bins;="" specifies="" how="" to="" extract="" a="" value="" from="" the="" associated="" data.="" default function="" is="" `number`,="" which="" equivalent="" identity="" function.="" histogram.value="function(x)" if="" (!arguments.length)="" valuer;="" valuer="x;" histogram;="" };="" range="" of="" histogram.="" values="" outside="" specified="" will="" be="" ignored.="" argument="" `x`="" may="" either="" as="" two-element="" array="" representing="" minimum="" and="" maximum="" range,="" or="" that="" returns="" given="" current="" index="" `i`.="" extent="" (minimum="" maximum)="" values.="" histogram.range="function(x)" ranger;="" ranger="d3.functor(x);" in="" number,="" case="" split="" uniformly="" into="" number="" bins.="" or,="" an="" threshold="" values,="" defining="" must="" contain="" rightmost="" (upper)="" value,="" thus="" specifying="" n="" for="" evaluated,="" being="" passed="" `i`,="" returning="" thresholds.="" divide="" uniform="" bins="" using="" sturges'="" formula.="" histogram.bins="function(x)" binner;="" binner="typeof" x="==" "number"="" ?="" function(range)="" d3_layout_histogrambinfixed(range,="" x);="" :="" d3.functor(x);="" whether="" histogram's="" `y`="" count="" (frequency)="" probability="" (density).="" true.="" histogram.frequency="function(x)" frequency;="" frequency="!!x;" d3_layout_histogrambinsturges(range,="" values)="" math.ceil(math.log(values.length)="" math.ln2="" 1));="" n)="" var="" b="+range[0]," m="(range[1]" b)="" n,="" f="[];" while="" (++x="" <="n)" f[x]="m" *="" b;="" f;="" d3_layout_histogramrange(values)="" [d3.min(values),="" d3.max(values)];="" d3.layout.hierarchy="function()" sort="d3_layout_hierarchySort," children="d3_layout_hierarchyChildren," recursively="" compute="" node="" depth="" value.="" also="" converts="" data="" representation="" standard="" hierarchy="" structure.="" recurse(data,="" depth,="" nodes)="" childs="children.call(hierarchy," data,="" depth),="" {data:="" data};="" node.depth="depth;" nodes.push(node);="" (childs="" &&="" (n="childs.length))" i="-1," c="node.children" =="" [],="" v="0," j="depth" 1;="" (++i="" d="recurse(childs[i]," j,="" nodes);="" d.parent="node;" c.push(d);="" (sort)="" c.sort(sort);="" (value)="" node.value="v;" else="" depth)="" ||="" 0;="" node;="" re-evaluates="" revalue(node,="" (children="" j);="" d3_layout_hierarchyinline="" node.data,="" v;="" hierarchy(d)="" nodes="[];" recurse(d,="" 0,="" nodes;="" hierarchy.sort="function(x)" sort;="" hierarchy;="" hierarchy.children="function(x)" children;="" hierarchy.value="function(x)" value;="" `value`="" property="" hierarchy.="" hierarchy.revalue="function(root)" revalue(root,="" 0);="" root;="" method="" assignment="" helper="" subclasses.="" d3_layout_hierarchyrebind(object,="" hierarchy)="" object.sort="d3.rebind(object," hierarchy.sort);="" object.children="d3.rebind(object," hierarchy.children);="" object.links="d3_layout_hierarchyLinks;" object.value="d3.rebind(object," hierarchy.value);="" new="" api="" used,="" enabling="" inlining.="" object.nodes="function(d)" (object.nodes="object)(d);" object;="" d3_layout_hierarchychildren(d)="" d.children;="" d3_layout_hierarchyvalue(d)="" d.value;="" d3_layout_hierarchysort(a,="" b.value="" a.value;="" source+target="" objects="" nodes.="" d3_layout_hierarchylinks(nodes)="" d3.merge(nodes.map(function(parent)="" (parent.children="" []).map(function(child)="" {source:="" parent,="" target:="" child};="" });="" }));="" backwards-compatibility,="" don't="" enable="" inlining="" by="" default.="" d3.layout.pack="function()" size="[1," pack(d,="" i)="" d,="" i),="" root="nodes[0];" layout.="" root.x="0;" root.y="0;" d3_layout_packtree(root);="" scale="" layout="" fit="" requested="" size.="" w="size[0]," h="size[1]," k="1" math.max(2="" root.r="" w,="" h);="" d3_layout_packtransform(root,="" 2,="" k);="" pack.size="function(x)" size;="" pack;="" d3_layout_hierarchyrebind(pack,="" hierarchy);="" d3_layout_packsort(a,="" a.value="" b.value;="" d3_layout_packinsert(a,="" a._pack_next="b;" b._pack_prev="a;" b._pack_next="c;" c._pack_prev="b;" d3_layout_packsplice(a,="" d3_layout_packintersects(a,="" dx="b.x" a.x,="" dy="b.y" a.y,="" dr="a.r" b.r;="" (dr="" dy)=""> .001; // within epsilon
+      if ((x >= range[0]) && (x <= range[1])) {
+        bin = bins[d3.bisect(thresholds, x, 1, m) - 1];
+        bin.y += k;
+        bin.push(data[i]);
+      }
+    }
+
+    return bins;
+  }
+
+  // Specifies how to extract a value from the associated data. The default
+  // value function is `Number`, which is equivalent to the identity function.
+  histogram.value = function(x) {
+    if (!arguments.length) return valuer;
+    valuer = x;
+    return histogram;
+  };
+
+  // Specifies the range of the histogram. Values outside the specified range
+  // will be ignored. The argument `x` may be specified either as a two-element
+  // array representing the minimum and maximum value of the range, or as a
+  // function that returns the range given the array of values and the current
+  // index `i`. The default range is the extent (minimum and maximum) of the
+  // values.
+  histogram.range = function(x) {
+    if (!arguments.length) return ranger;
+    ranger = d3.functor(x);
+    return histogram;
+  };
+
+  // Specifies how to bin values in the histogram. The argument `x` may be
+  // specified as a number, in which case the range of values will be split
+  // uniformly into the given number of bins. Or, `x` may be an array of
+  // threshold values, defining the bins; the specified array must contain the
+  // rightmost (upper) value, thus specifying n + 1 values for n bins. Or, `x`
+  // may be a function which is evaluated, being passed the range, the array of
+  // values, and the current index `i`, returning an array of thresholds. The
+  // default bin function will divide the values into uniform bins using
+  // Sturges' formula.
+  histogram.bins = function(x) {
+    if (!arguments.length) return binner;
+    binner = typeof x === "number"
+        ? function(range) { return d3_layout_histogramBinFixed(range, x); }
+        : d3.functor(x);
+    return histogram;
+  };
+
+  // Specifies whether the histogram's `y` value is a count (frequency) or a
+  // probability (density). The default value is true.
+  histogram.frequency = function(x) {
+    if (!arguments.length) return frequency;
+    frequency = !!x;
+    return histogram;
+  };
+
+  return histogram;
+};
+
+function d3_layout_histogramBinSturges(range, values) {
+  return d3_layout_histogramBinFixed(range, Math.ceil(Math.log(values.length) / Math.LN2 + 1));
+}
+
+function d3_layout_histogramBinFixed(range, n) {
+  var x = -1,
+      b = +range[0],
+      m = (range[1] - b) / n,
+      f = [];
+  while (++x <= n) f[x] = m * x + b;
+  return f;
+}
+
+function d3_layout_histogramRange(values) {
+  return [d3.min(values), d3.max(values)];
+}
+d3.layout.hierarchy = function() {
+  var sort = d3_layout_hierarchySort,
+      children = d3_layout_hierarchyChildren,
+      value = d3_layout_hierarchyValue;
+
+  // Recursively compute the node depth and value.
+  // Also converts the data representation into a standard hierarchy structure.
+  function recurse(data, depth, nodes) {
+    var childs = children.call(hierarchy, data, depth),
+        node = d3_layout_hierarchyInline ? data : {data: data};
+    node.depth = depth;
+    nodes.push(node);
+    if (childs && (n = childs.length)) {
+      var i = -1,
+          n,
+          c = node.children = [],
+          v = 0,
+          j = depth + 1;
+      while (++i < n) {
+        d = recurse(childs[i], j, nodes);
+        d.parent = node;
+        c.push(d);
+        v += d.value;
+      }
+      if (sort) c.sort(sort);
+      if (value) node.value = v;
+    } else if (value) {
+      node.value = +value.call(hierarchy, data, depth) || 0;
+    }
+    return node;
+  }
+
+  // Recursively re-evaluates the node value.
+  function revalue(node, depth) {
+    var children = node.children,
+        v = 0;
+    if (children && (n = children.length)) {
+      var i = -1,
+          n,
+          j = depth + 1;
+      while (++i < n) v += revalue(children[i], j);
+    } else if (value) {
+      v = +value.call(hierarchy, d3_layout_hierarchyInline ? node : node.data, depth) || 0;
+    }
+    if (value) node.value = v;
+    return v;
+  }
+
+  function hierarchy(d) {
+    var nodes = [];
+    recurse(d, 0, nodes);
+    return nodes;
+  }
+
+  hierarchy.sort = function(x) {
+    if (!arguments.length) return sort;
+    sort = x;
+    return hierarchy;
+  };
+
+  hierarchy.children = function(x) {
+    if (!arguments.length) return children;
+    children = x;
+    return hierarchy;
+  };
+
+  hierarchy.value = function(x) {
+    if (!arguments.length) return value;
+    value = x;
+    return hierarchy;
+  };
+
+  // Re-evaluates the `value` property for the specified hierarchy.
+  hierarchy.revalue = function(root) {
+    revalue(root, 0);
+    return root;
+  };
+
+  return hierarchy;
+};
+
+// A method assignment helper for hierarchy subclasses.
+function d3_layout_hierarchyRebind(object, hierarchy) {
+  object.sort = d3.rebind(object, hierarchy.sort);
+  object.children = d3.rebind(object, hierarchy.children);
+  object.links = d3_layout_hierarchyLinks;
+  object.value = d3.rebind(object, hierarchy.value);
+
+  // If the new API is used, enabling inlining.
+  object.nodes = function(d) {
+    d3_layout_hierarchyInline = true;
+    return (object.nodes = object)(d);
+  };
+
+  return object;
+}
+
+function d3_layout_hierarchyChildren(d) {
+  return d.children;
+}
+
+function d3_layout_hierarchyValue(d) {
+  return d.value;
+}
+
+function d3_layout_hierarchySort(a, b) {
+  return b.value - a.value;
+}
+
+// Returns an array source+target objects for the specified nodes.
+function d3_layout_hierarchyLinks(nodes) {
+  return d3.merge(nodes.map(function(parent) {
+    return (parent.children || []).map(function(child) {
+      return {source: parent, target: child};
+    });
+  }));
+}
+
+// For backwards-compatibility, don't enable inlining by default.
+var d3_layout_hierarchyInline = false;
+d3.layout.pack = function() {
+  var hierarchy = d3.layout.hierarchy().sort(d3_layout_packSort),
+      size = [1, 1];
+
+  function pack(d, i) {
+    var nodes = hierarchy.call(this, d, i),
+        root = nodes[0];
+
+    // Recursively compute the layout.
+    root.x = 0;
+    root.y = 0;
+    d3_layout_packTree(root);
+
+    // Scale the layout to fit the requested size.
+    var w = size[0],
+        h = size[1],
+        k = 1 / Math.max(2 * root.r / w, 2 * root.r / h);
+    d3_layout_packTransform(root, w / 2, h / 2, k);
+
+    return nodes;
+  }
+
+  pack.size = function(x) {
+    if (!arguments.length) return size;
+    size = x;
+    return pack;
+  };
+
+  return d3_layout_hierarchyRebind(pack, hierarchy);
+};
+
+function d3_layout_packSort(a, b) {
+  return a.value - b.value;
+}
+
+function d3_layout_packInsert(a, b) {
+  var c = a._pack_next;
+  a._pack_next = b;
+  b._pack_prev = a;
+  b._pack_next = c;
+  c._pack_prev = b;
+}
+
+function d3_layout_packSplice(a, b) {
+  a._pack_next = b;
+  b._pack_prev = a;
+}
+
+function d3_layout_packIntersects(a, b) {
+  var dx = b.x - a.x,
+      dy = b.y - a.y,
+      dr = a.r + b.r;
+  return (dr * dr - dx * dx - dy * dy) > .001; // within epsilon
 }
 
 function d3_layout_packCircle(nodes) {
@@ -1444,10 +1690,81 @@ d3.layout.treemap = function() {
         area;
     while (++i < n) {
       area = (child = children[i]).value * (k < 0 ? 0 : k);
-      child.area = isNaN(area) || area <= 0="" ?="" :="" area;="" }="" recursively="" arranges="" the="" specified="" node's="" children="" into="" squarified="" rows.="" function="" squarify(node)="" {="" var="" if="" (children="" &&="" children.length)="" rect="pad(node)," row="[]," remaining="children.slice()," copy-on-write="" child,="" best="Infinity," score="" so="" far="" score,="" current="" u="Math.min(rect.dx," rect.dy),="" initial="" orientation="" n;="" scale(remaining,="" rect.dx="" *="" rect.dy="" node.value);="" row.area="0;" while="" ((n="remaining.length)"> 0) {
+      child.area = isNaN(area) || area <= 0 ? 0 : area;
+    }
+  }
+
+  // Recursively arranges the specified node's children into squarified rows.
+  function squarify(node) {
+    var children = node.children;
+    if (children && children.length) {
+      var rect = pad(node),
+          row = [],
+          remaining = children.slice(), // copy-on-write
+          child,
+          best = Infinity, // the best row score so far
+          score, // the current row score
+          u = Math.min(rect.dx, rect.dy), // initial orientation
+          n;
+      scale(remaining, rect.dx * rect.dy / node.value);
+      row.area = 0;
+      while ((n = remaining.length) > 0) {
         row.push(child = remaining[n - 1]);
         row.area += child.area;
-        if ((score = worst(row, u)) <= best)="" {="" continue="" with="" this="" orientation="" remaining.pop();="" best="score;" }="" else="" abort,="" and="" try="" a="" different="" row.area="" -="row.pop().area;" position(row,="" u,="" rect,="" false);="" u="Math.min(rect.dx," rect.dy);="" row.length="row.area" =="" 0;="" if="" (row.length)="" true);="" children.foreach(squarify);="" recursively="" resizes="" the="" specified="" node's="" children="" into="" existing="" rows.="" preserves="" layout!="" function="" stickify(node)="" var="" (children="" &&="" children.length)="" rect="pad(node)," remaining="children.slice()," copy-on-write="" child,="" row="[];" scale(remaining,="" rect.dx="" *="" rect.dy="" node.value);="" while="" (child="remaining.pop())" row.push(child);="" +="child.area;" (child.z="" !="null)" child.z="" ?="" :="" rect.dy,="" !remaining.length);="" children.foreach(stickify);="" computes="" score="" for="" row,="" as="" worst="" aspect="" ratio.="" worst(row,="" u)="" s="row.area," r,="" rmax="0," rmin="Infinity," i="-1," n="row.length;" (++i="" <="" n)="" (!(r="row[i].area))" continue;="" (r="" rmin)=""> rmax) rmax = r;
+        if ((score = worst(row, u)) <= best) { // continue with this orientation
+          remaining.pop();
+          best = score;
+        } else { // abort, and try a different orientation
+          row.area -= row.pop().area;
+          position(row, u, rect, false);
+          u = Math.min(rect.dx, rect.dy);
+          row.length = row.area = 0;
+          best = Infinity;
+        }
+      }
+      if (row.length) {
+        position(row, u, rect, true);
+        row.length = row.area = 0;
+      }
+      children.forEach(squarify);
+    }
+  }
+
+  // Recursively resizes the specified node's children into existing rows.
+  // Preserves the existing layout!
+  function stickify(node) {
+    var children = node.children;
+    if (children && children.length) {
+      var rect = pad(node),
+          remaining = children.slice(), // copy-on-write
+          child,
+          row = [];
+      scale(remaining, rect.dx * rect.dy / node.value);
+      row.area = 0;
+      while (child = remaining.pop()) {
+        row.push(child);
+        row.area += child.area;
+        if (child.z != null) {
+          position(row, child.z ? rect.dx : rect.dy, rect, !remaining.length);
+          row.length = row.area = 0;
+        }
+      }
+      children.forEach(stickify);
+    }
+  }
+
+  // Computes the score for the specified row, as the worst aspect ratio.
+  function worst(row, u) {
+    var s = row.area,
+        r,
+        rmax = 0,
+        rmin = Infinity,
+        i = -1,
+        n = row.length;
+    while (++i < n) {
+      if (!(r = row[i].area)) continue;
+      if (r < rmin) rmin = r;
+      if (r > rmax) rmax = r;
     }
     s *= s;
     u *= u;
@@ -1571,4 +1888,3 @@ function d3_layout_treemapPad(node, padding) {
   return {x: x, y: y, dx: dx, dy: dy};
 }
 })();
-</=></=></=>

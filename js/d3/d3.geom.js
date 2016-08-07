@@ -1,6 +1,7 @@
-<link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script>(function(){d3.geom = {};
+(function(){d3.geom = {};
 /**
- * Computes a contour for a given input grid function using the <a *="" href="http://en.wikipedia.org/wiki/Marching_squares" target="_blank" rel="external">marching
+ * Computes a contour for a given input grid function using the <a
+ * href="http://en.wikipedia.org/wiki/Marching_squares">marching
  * squares</a> algorithm. Returns the contour polygon as an array of points.
  *
  * @param grid a two-input function(x, y) that returns true for values
@@ -95,7 +96,36 @@ d3.geom.hull = function(vertices) {
       i, j, h = 0, x1, y1, x2, y2, u, v, a, sp;
 
   // find the starting ref point: leftmost point with the minimum y coord
-  for (i=1; i<len; ++i)="" {="" if="" (vertices[i][1]="" <="" vertices[h][1])="" h="i;" }="" else="" vertices[h][0]="" ?="" i="" :="" h);="" calculate="" polar="" angles="" from="" ref="" point="" and="" sort="" for="" (i="0;" i<len;="" h)="" continue;="" y1="vertices[i][1]" -="" vertices[h][1];="" x1="vertices[i][0]" vertices[h][0];="" points.push({angle:="" math.atan2(y1,="" x1),="" index:="" i});="" points.sort(function(a,="" b)="" return="" a.angle="" b.angle;="" });="" toss="" out="" duplicate="" a="points[0].angle;" v="points[0].index;" u="0;" i<plen;="" j="points[i].index;" (a="=" points[i].angle)="" keep="" angle="" most="" distant="" the="" reference="" x2="vertices[j][0]" y2="vertices[j][1]" ((x1*x1="" +="" y1*y1)="">= (x2*x2 + y2*y2)) {
+  for (i=1; i<len; ++i) {
+    if (vertices[i][1] < vertices[h][1]) {
+      h = i;
+    } else if (vertices[i][1] == vertices[h][1]) {
+      h = (vertices[i][0] < vertices[h][0] ? i : h);
+    }
+  }
+
+  // calculate polar angles from ref point and sort
+  for (i=0; i<len; ++i) {
+    if (i === h) continue;
+    y1 = vertices[i][1] - vertices[h][1];
+    x1 = vertices[i][0] - vertices[h][0];
+    points.push({angle: Math.atan2(y1, x1), index: i});
+  }
+  points.sort(function(a, b) { return a.angle - b.angle; });
+
+  // toss out duplicate angles
+  a = points[0].angle;
+  v = points[0].index;
+  u = 0;
+  for (i=1; i<plen; ++i) {
+    j = points[i].index;
+    if (a == points[i].angle) {
+      // keep angle for point most distant from the reference
+      x1 = vertices[v][0] - vertices[h][0];
+      y1 = vertices[v][1] - vertices[h][1];
+      x2 = vertices[j][0] - vertices[h][0];
+      y2 = vertices[j][1] - vertices[h][1];
+      if ((x1*x1 + y1*y1) >= (x2*x2 + y2*y2)) {
         points[i].index = -1;
       } else {
         points[u].index = -1;
@@ -112,7 +142,38 @@ d3.geom.hull = function(vertices) {
 
   // initialize the stack
   stack.push(h);
-  for (i=0, j=0; i<2; ++j)="" {="" if="" (points[j].index="" !="=" -1)="" stack.push(points[j].index);="" i++;="" }="" sp="stack.length;" do="" graham's="" scan="" for="" (;="" j<plen;="" continue;="" skip="" tossed="" out="" points="" while="" (!d3_geom_hullccw(stack[sp-2],="" stack[sp-1],="" points[j].index,="" vertices))="" --sp;="" stack[sp++]="points[j].index;" construct="" the="" hull="" var="" poly="[];" (i="0;" i<sp;="" ++i)="" poly.push(vertices[stack[i]]);="" return="" poly;="" are="" three="" in="" counter-clockwise="" order?="" function="" d3_geom_hullccw(i1,="" i2,="" i3,="" v)="" t,="" a,="" b,="" c,="" d,="" e,="" f;="" t="v[i1];" a="t[0];" b="t[1];" c="t[0];" d="t[1];" e="t[0];" f="t[1];" ((f-b)*(c-a)="" -="" (d-b)*(e-a))=""> 0;
+  for (i=0, j=0; i<2; ++j) {
+    if (points[j].index !== -1) {
+      stack.push(points[j].index);
+      i++;
+    }
+  }
+  sp = stack.length;
+
+  // do graham's scan
+  for (; j<plen; ++j) {
+    if (points[j].index === -1) continue; // skip tossed out points
+    while (!d3_geom_hullCCW(stack[sp-2], stack[sp-1], points[j].index, vertices)) {
+      --sp;
+    }
+    stack[sp++] = points[j].index;
+  }
+
+  // construct the hull
+  var poly = [];
+  for (i=0; i<sp; ++i) {
+    poly.push(vertices[stack[i]]);
+  }
+  return poly;
+}
+
+// are three points in counter-clockwise order?
+function d3_geom_hullCCW(i1, i2, i3, v) {
+  var t, a, b, c, d, e, f;
+  t = v[i1]; a = t[0]; b = t[1];
+  t = v[i2]; c = t[0]; d = t[1];
+  t = v[i3]; e = t[0]; f = t[1];
+  return ((f-b)*(c-a) - (d-b)*(e-a)) > 0;
 }
 // Note: requires coordinates to be counterclockwise and convex!
 d3.geom.polygon = function(coordinates) {
@@ -482,7 +543,9 @@ function d3_voronoi_tessellate(vertices, callback) {
     insert: function(he, site, offset) {
       he.vertex = site;
       he.ystar = site.y + offset;
-      for (var i=0, list=EventQueue.list, l=list.length; i<l; i++)="" {="" var="" next="list[i];" if="" (he.ystar=""> next.ystar ||
+      for (var i=0, list=EventQueue.list, l=list.length; i<l; i++) {
+        var next = list[i];
+        if (he.ystar > next.ystar ||
           (he.ystar == next.ystar &&
           site.x > next.vertex.x)) {
           continue;
@@ -494,7 +557,82 @@ function d3_voronoi_tessellate(vertices, callback) {
     },
 
     del: function(he) {
-      for (var i=0, ls=EventQueue.list, l=ls.length; i<l &&="" (ls[i]="" !="he);" ++i)="" {}="" ls.splice(i,="" 1);="" },="" empty:="" function()="" {="" return="" eventqueue.list.length="==" 0;="" nextevent:="" function(he)="" for="" (var="" i="0," ls="EventQueue.list," l="ls.length;" i<l;="" if="" he)="" ls[i+1];="" }="" null;="" min:="" var="" elem="EventQueue.list[0];" x:="" elem.vertex.x,="" y:="" elem.ystar="" };="" extractmin:="" eventqueue.list.shift();="" edgelist.init();="" sites.bottomsite="Sites.list.shift();" newsite="Sites.list.shift()," newintstar;="" lbnd,="" rbnd,="" llbnd,="" rrbnd,="" bisector;="" bot,="" top,="" temp,="" p,="" v;="" e,="" pm;="" while="" (true)="" (!eventqueue.empty())="" newintstar="EventQueue.min();" (newsite="" (eventqueue.empty()="" ||="" newsite.y="" <="" newintstar.y="" (newsite.y="=" newsite.x="" newintstar.x)))="" new="" site="" is="" smallest="" lbnd="EdgeList.leftBound(newSite);" rbnd="EdgeList.right(lbnd);" bot="EdgeList.rightRegion(lbnd);" e="Geom.bisect(bot," newsite);="" bisector="EdgeList.createHalfEdge(e," "l");="" edgelist.insert(lbnd,="" bisector);="" p="Geom.intersect(lbnd," (p)="" eventqueue.del(lbnd);="" eventqueue.insert(lbnd,="" geom.distance(p,="" newsite));="" "r");="" rbnd);="" eventqueue.insert(bisector,="" else="" intersection="" llbnd="EdgeList.left(lbnd);" rrbnd="EdgeList.right(rbnd);" top="EdgeList.rightRegion(rbnd);" v="lbnd.vertex;" geom.endpoint(lbnd.edge,="" lbnd.side,="" v);="" geom.endpoint(rbnd.edge,="" rbnd.side,="" edgelist.del(lbnd);="" eventqueue.del(rbnd);="" edgelist.del(rbnd);="" pm="l" ;="" (bot.y=""> top.y) {
+      for (var i=0, ls=EventQueue.list, l=ls.length; i<l && (ls[i] != he); ++i) {}
+      ls.splice(i, 1);
+    },
+
+    empty: function() { return EventQueue.list.length === 0; },
+
+    nextEvent: function(he) {
+      for (var i=0, ls=EventQueue.list, l=ls.length; i<l; ++i) {
+        if (ls[i] == he) return ls[i+1];
+      }
+      return null;
+    },
+
+    min: function() {
+      var elem = EventQueue.list[0];
+      return {
+        x: elem.vertex.x,
+        y: elem.ystar
+      };
+    },
+
+    extractMin: function() {
+      return EventQueue.list.shift();
+    }
+  };
+
+  EdgeList.init();
+  Sites.bottomSite = Sites.list.shift();
+
+  var newSite = Sites.list.shift(), newIntStar;
+  var lbnd, rbnd, llbnd, rrbnd, bisector;
+  var bot, top, temp, p, v;
+  var e, pm;
+
+  while (true) {
+    if (!EventQueue.empty()) {
+      newIntStar = EventQueue.min();
+    }
+    if (newSite && (EventQueue.empty()
+      || newSite.y < newIntStar.y
+      || (newSite.y == newIntStar.y
+      && newSite.x < newIntStar.x))) { //new site is smallest
+      lbnd = EdgeList.leftBound(newSite);
+      rbnd = EdgeList.right(lbnd);
+      bot = EdgeList.rightRegion(lbnd);
+      e = Geom.bisect(bot, newSite);
+      bisector = EdgeList.createHalfEdge(e, "l");
+      EdgeList.insert(lbnd, bisector);
+      p = Geom.intersect(lbnd, bisector);
+      if (p) {
+        EventQueue.del(lbnd);
+        EventQueue.insert(lbnd, p, Geom.distance(p, newSite));
+      }
+      lbnd = bisector;
+      bisector = EdgeList.createHalfEdge(e, "r");
+      EdgeList.insert(lbnd, bisector);
+      p = Geom.intersect(bisector, rbnd);
+      if (p) {
+        EventQueue.insert(bisector, p, Geom.distance(p, newSite));
+      }
+      newSite = Sites.list.shift();
+    } else if (!EventQueue.empty()) { //intersection is smallest
+      lbnd = EventQueue.extractMin();
+      llbnd = EdgeList.left(lbnd);
+      rbnd = EdgeList.right(lbnd);
+      rrbnd = EdgeList.right(rbnd);
+      bot = EdgeList.leftRegion(lbnd);
+      top = EdgeList.rightRegion(rbnd);
+      v = lbnd.vertex;
+      Geom.endPoint(lbnd.edge, lbnd.side, v);
+      Geom.endPoint(rbnd.edge, rbnd.side, v);
+      EdgeList.del(lbnd);
+      EventQueue.del(rbnd);
+      EdgeList.del(rbnd);
+      pm = "l";
+      if (bot.y > top.y) {
         temp = bot;
         bot = top;
         top = temp;
@@ -685,4 +823,3 @@ function d3_geom_quadtreePoint(p) {
   };
 }
 })();
-</l></l;></2;></len;>

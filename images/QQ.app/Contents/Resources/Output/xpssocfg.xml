@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<XPSSOConfig>
-	<StringBundles>
-		<StringBundle LocaleId="2052" File="SSOStringBundle_2052.xml"/>
-	</StringBundles>
-</XPSSOConfig>

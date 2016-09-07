@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12E55</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>SCWebEngine</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.tencent.SCWebEngine</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>SCWebEngine</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>4H1003</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>12D75</string>
+	<key>DTSDKName</key>
+	<string>macosx10.8</string>
+	<key>DTXcode</key>
+	<string>0462</string>
+	<key>DTXcodeBuild</key>
+	<string>4H1003</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2012 __MyCompanyName__. All rights reserved.</string>
+	<key>SCExtensionPoints</key>
+	<array>
+		<string>SCWebEngineItem</string>
+	</array>
+	<key>SCExtensions</key>
+	<array>
+		<dict>
+			<key>desc</key>
+			<string>Google Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>google</string>
+				<key>matchPrefix</key>
+				<string>g </string>
+				<key>namePattern</key>
+				<string>Search Google for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://www.google.com.hk/search?q=%@</string>
+				<key>webName</key>
+				<string>谷歌</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Baidu Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>baidu</string>
+				<key>matchPrefix</key>
+				<string>b </string>
+				<key>namePattern</key>
+				<string>Search Baidu for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://www.baidu.com/s?wd=%@</string>
+				<key>webName</key>
+				<string>百度</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Soso Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>soso</string>
+				<key>matchPrefix</key>
+				<string>s </string>
+				<key>namePattern</key>
+				<string>Search Soso for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://www.soso.com/q?w=%@</string>
+				<key>webName</key>
+				<string>搜搜</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Yahoo Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>yahoo</string>
+				<key>matchPrefix</key>
+				<string>y </string>
+				<key>namePattern</key>
+				<string>Search Yahoo for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://search.yahoo.com/search?p=%@</string>
+				<key>webName</key>
+				<string>雅虎</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Taobao Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>taobao</string>
+				<key>matchPrefix</key>
+				<string>tb </string>
+				<key>namePattern</key>
+				<string>Search Taobao for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://s.taobao.com/search?q=%@</string>
+				<key>webName</key>
+				<string>淘宝</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Dangdang Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>dangdang</string>
+				<key>matchPrefix</key>
+				<string>dd </string>
+				<key>namePattern</key>
+				<string>Search Dangdang for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://search.dangdang.com/search.aspx?key=%@</string>
+				<key>webName</key>
+				<string>当当</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Youdao Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>youdao</string>
+				<key>matchPrefix</key>
+				<string>yd </string>
+				<key>namePattern</key>
+				<string>Search Youdao for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://fanyi.youdao.com/translate?i=%@</string>
+				<key>webName</key>
+				<string>有道</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Douban Web Search Engine Item</string>
+			<key>extensionPoint</key>
+			<string>SCWebEngineItem</string>
+			<key>name</key>
+			<string>SCWebEngineItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>iconName</key>
+				<string>douban</string>
+				<key>matchPrefix</key>
+				<string>db </string>
+				<key>namePattern</key>
+				<string>Search Douban for '%@'</string>
+				<key>urlPattern</key>
+				<string>http://www.douban.com/search?q=%@</string>
+				<key>webName</key>
+				<string>豆瓣</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Web Engine Provider</string>
+			<key>extensionPoint</key>
+			<string>SCProvider</string>
+			<key>name</key>
+			<string>SCWebEngineProvider</string>
+			<key>parameters</key>
+			<dict>
+				<key>providerDescription</key>
+				<string>Web search plugIn</string>
+				<key>providerIconName</key>
+				<string>websearch</string>
+				<key>providerName</key>
+				<string>Web search plugIn</string>
+				<key>providerPluginName</key>
+				<string>SCWebEngine.scplugin</string>
+				<key>providerPreferenceViewControllerName</key>
+				<string>WebPreferenceViewController</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

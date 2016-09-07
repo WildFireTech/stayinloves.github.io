@@ -1,0 +1,5 @@
+RTCP/RTP仅仅负责生成/解析数据
+VideoEncoder负责管理编码器和RTP分包，执行VideoQos要求
+VideoQos负责流控
+VideoDecoder负责管理解码器，驱动VideoJitterBuf工作
+VideoJitterBuf负责抗抖动和RTP组包

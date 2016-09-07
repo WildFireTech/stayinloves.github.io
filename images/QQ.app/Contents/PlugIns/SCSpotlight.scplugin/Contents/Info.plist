@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12E55</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>SCSpotlight</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.tencent.SCSpotlight</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>SCSpotlight</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>4H1003</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>12D75</string>
+	<key>DTSDKName</key>
+	<string>macosx10.8</string>
+	<key>DTXcode</key>
+	<string>0462</string>
+	<key>DTXcodeBuild</key>
+	<string>4H1003</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2012 __MyCompanyName__. All rights reserved.</string>
+	<key>SCExtensions</key>
+	<array>
+		<dict>
+			<key>desc</key>
+			<string>Spotlight Provider</string>
+			<key>extensionPoint</key>
+			<string>SCProvider</string>
+			<key>name</key>
+			<string>SCSpotlightProvider</string>
+			<key>parameters</key>
+			<dict>
+				<key>providerDescription</key>
+				<string>Spotlight plugIn</string>
+				<key>providerIconName</key>
+				<string>spotlight</string>
+				<key>providerName</key>
+				<string>Spotlight plugIn</string>
+				<key>providerPluginName</key>
+				<string>SCSpotlight.scplugin</string>
+				<key>providerPreferenceRank</key>
+				<integer>1</integer>
+				<key>providerPreferenceViewControllerName</key>
+				<string></string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

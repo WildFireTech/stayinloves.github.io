@@ -1,0 +1,22 @@
+<h1 id="RMBlurredView"><a href="#RMBlurredView" class="headerlink" title="RMBlurredView"></a>RMBlurredView</h1><p>This subclass of NSView can be used to get an iOS 7 like blurred background to mimic a frosted glass effect — on OS X! Check out the corresponding article on <a href="http://www.cocoanetics.com/2013/10/blurring-views-on-mac/">Cocoanetics</a>.</p>
+<p><strong>NOTE:</strong> The parent view of the RMBlurredView must be layer-backed to see the effect.</p>
+<p><img src="http://www.cocoanetics.com/files/Chat-Heads-Preview.jpg" alt="RMBlurredView, a NSView with blurred background" title="Custom NSView subclass with blurred background"></p>
+<p>(<a href="http://www.raffael.me/chatheads">Chat Heads</a> with blurred title and bottom bar)</p>
+<p>The view can be easily customized to your needs:</p>
+<ul>
+<li><p><strong>blurRadius (float)</strong> A float indicating the strength of the blur effect. This will be directly passed as input parameter for the Gaussian blur CIFilter. Default: 20.0.</p>
+</li>
+<li><p><strong>saturationFactor (float)</strong> A float value indicating the strength of the increased saturation effect. The Control Center for example uses increased saturated colors to get more vibrant colors shining through the view. Default: 2.0.</p>
+</li>
+<li><p><strong>tintColor (NSColor)</strong> A NSColor used a the background color for the view. Default: 70% White.</p>
+</li>
+</ul>
+<p><strong>NOTE:</strong> Can be used with <a href="https://github.com/raffael/RMSecondaryScroller">RMSecondaryScroller</a> to get a customizable NSScroller for NSScrollViews.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Usage should be clear once you see the annotated header file. Check out the <a href="https://github.com/raffael/RMBlurredViewExample">RMBlurredViewExample</a> project.</p>
+<h2 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h2><ul>
+<li>Raffael Hannemann</li>
+<li><a href="http://www.twitter.com/raffael_me/">@raffael_me</a></li>
+<li><a href="http://www.raffael.me/">http://www.raffael.me/</a></li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Copyright (c) 2013 Raffael Hannemann<br>Under BSD License.</p>
+<h2 id="Want-more"><a href="#Want-more" class="headerlink" title="Want more?"></a>Want more?</h2><p>Follow <a href="http://www.twitter.com/raffael_me/">@raffael_me</a> for similar releases.</p>

@@ -1,0 +1,24 @@
+message ScreenCaptureData{
+  optional string MessageDate = 1;
+}
+
+message ScreenCaptureSetting{
+  optional string PictureSavePath = 1;
+  optional uint32 SaveType = 2;
+  optional uint32 HotKeyCode = 3;
+  optional uint32 HotKeykeyModifier = 4;
+  optional bool IsHightResolution = 5;
+}
+
+enum SCMessageType{
+    ScreenCaptureSettingType = 0;
+    ScreenCaptureStartCaptureType = 1;
+    ScreenCaptureDataType = 2;
+    ScreenCaptureDataReport = 3;
+    ScreenCaptureOpenSettingPanel = 4;
+}
+  
+message ScreenCapturePacket{
+  optional SCMessageType Type = 1;
+  optional string MessageDate = 2;
+}

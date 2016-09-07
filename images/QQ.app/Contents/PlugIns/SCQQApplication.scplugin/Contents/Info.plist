@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12E55</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>SCQQApplication</string>
+	<key>CFBundleIdentifier</key>
+	<string>Benson.SCQQApplication</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>SCQQApplication</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>4H1003</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>12D75</string>
+	<key>DTSDKName</key>
+	<string>macosx10.8</string>
+	<key>DTXcode</key>
+	<string>0462</string>
+	<key>DTXcodeBuild</key>
+	<string>4H1003</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2013年 Benson. All rights reserved.</string>
+	<key>SCExtensionPoints</key>
+	<array>
+		<string>SCQQApplicationItem</string>
+	</array>
+	<key>SCExtensions</key>
+	<array>
+		<dict>
+			<key>desc</key>
+			<string>QQMail Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>收发邮件，查看绑定的邮箱及阅读空间</string>
+				<key>descriptionEng</key>
+				<string>Sending and Receiving Emails in QQMail</string>
+				<key>iconName</key>
+				<string>application_mail</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>qq邮箱</string>
+					<string>邮箱</string>
+					<string>mail</string>
+					<string>qqmail</string>
+					<string>email</string>
+				</array>
+				<key>target</key>
+				<string>QQMail</string>
+				<key>titleChn</key>
+				<string>QQ邮箱</string>
+				<key>titleEng</key>
+				<string>QQMail</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Qzone Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>查看好友动态，分享生活，留住感动</string>
+				<key>descriptionEng</key>
+				<string>View your friends and share your life in QZone</string>
+				<key>iconName</key>
+				<string>application_qzone</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>空间</string>
+					<string>qq空间</string>
+					<string>qzone</string>
+					<string>q-zone</string>
+				</array>
+				<key>target</key>
+				<string>Qzone</string>
+				<key>titleChn</key>
+				<string>空间</string>
+				<key>titleEng</key>
+				<string>QZone</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Contact Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>查看联系人、群、讨论组列表</string>
+				<key>descriptionEng</key>
+				<string>Check your contact,group and discussion group list</string>
+				<key>iconName</key>
+				<string>application_contact</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>通讯录</string>
+					<string>联系人</string>
+					<string>好友</string>
+					<string>好友列表</string>
+					<string>contacts</string>
+					<string>buddy list</string>
+					<string>contact</string>
+					<string>buddy</string>
+				</array>
+				<key>target</key>
+				<string>Contact</string>
+				<key>titleChn</key>
+				<string>联系人面板</string>
+				<key>titleEng</key>
+				<string>Contacts</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>FileBox Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>处理QQ传输任务，管理已传输文件</string>
+				<key>descriptionEng</key>
+				<string>A panel to manage your transmission and files</string>
+				<key>iconName</key>
+				<string>application_filebox</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>文件助手</string>
+					<string>file assistant</string>
+					<string>fileassistant</string>
+					<string>file</string>
+					<string>文件</string>
+					<string>assistant</string>
+					<string>助手</string>
+				</array>
+				<key>target</key>
+				<string>FileBox</string>
+				<key>titleChn</key>
+				<string>文件助手</string>
+				<key>titleEng</key>
+				<string>File Assistant</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>FeedBack Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>向QQ for Mac团队反馈产品问题，意见或建议</string>
+				<key>descriptionEng</key>
+				<string>Send feedback to QQ for Mac Team</string>
+				<key>iconName</key>
+				<string>application_feedback</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>反馈</string>
+					<string>反馈中心</string>
+					<string>问题</string>
+					<string>bug</string>
+					<string>feedback</string>
+				</array>
+				<key>target</key>
+				<string>FeedBack</string>
+				<key>titleChn</key>
+				<string>反馈中心</string>
+				<key>titleEng</key>
+				<string>Feedback Center</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Request Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>处理所有的请求与系统通知</string>
+				<key>descriptionEng</key>
+				<string>Where you can manage all the Request&amp;Notice</string>
+				<key>iconName</key>
+				<string>application_request</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>请求</string>
+					<string>请求与通知面板</string>
+					<string>request</string>
+					<string>请求与通知</string>
+				</array>
+				<key>target</key>
+				<string>Request</string>
+				<key>titleChn</key>
+				<string>请求与通知</string>
+				<key>titleEng</key>
+				<string>Request&amp;Notice</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>Emoticon Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>表情分组管理，导入导出表情包</string>
+				<key>descriptionEng</key>
+				<string>To manage the emoticon packages</string>
+				<key>iconName</key>
+				<string>application_emoticon</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>表情管理器</string>
+					<string>emoticon</string>
+					<string>表情</string>
+				</array>
+				<key>target</key>
+				<string>Emoticon</string>
+				<key>titleChn</key>
+				<string>表情管理器</string>
+				<key>titleEng</key>
+				<string>Emoticon Manager</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>ClearCache Item</string>
+			<key>extensionPoint</key>
+			<string>SCQQApplicationItem</string>
+			<key>name</key>
+			<string>SCQQApplicationItem</string>
+			<key>parameters</key>
+			<dict>
+				<key>descriptionChn</key>
+				<string>执行清理QQ缓存的任务</string>
+				<key>descriptionEng</key>
+				<string>Clear the image cache of QQ</string>
+				<key>iconName</key>
+				<string>application_clearcache</string>
+				<key>matchPrefix</key>
+				<array>
+					<string>缓存</string>
+					<string>清理</string>
+					<string>清理缓存</string>
+					<string>清理qq缓存</string>
+					<string>清理图片</string>
+					<string>清理图片缓存</string>
+					<string>图片缓存</string>
+					<string>image cache</string>
+					<string>clear image</string>
+					<string>clear</string>
+				</array>
+				<key>target</key>
+				<string>ClearCache</string>
+				<key>titleChn</key>
+				<string>清理QQ缓存</string>
+				<key>titleEng</key>
+				<string>Clear image cache</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>desc</key>
+			<string>QQApplication Provider</string>
+			<key>extensionPoint</key>
+			<string>SCProvider</string>
+			<key>name</key>
+			<string>SCQQApplicationProvider</string>
+			<key>parameters</key>
+			<dict>
+				<key>providerDescription</key>
+				<string>QQApplication plugIn</string>
+				<key>providerIconName</key>
+				<string>QQApplication</string>
+				<key>providerName</key>
+				<string>QQApplication plugIn</string>
+				<key>providerPluginName</key>
+				<string>SCQQApplication.scplugin</string>
+				<key>providerPreferenceRank</key>
+				<string>5</string>
+				<key>providerPreferenceViewControllerName</key>
+				<string></string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

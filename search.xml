@@ -987,14 +987,14 @@ brew update
     <entry>
       <title><![CDATA[搭建Blog基于Github pages & hexo]]></title>
       <url>http://stay.wiki/2016/04/21/blog-build/</url>
-      <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>还记得小时候第一次接触QQ，申请了自己的第一个QQ号，几经变迁，号码几何现在早已经起不清了。但是还清醒的记得那时熄灯之后在床上辗转反侧构想QQ的个性签名，终于有了一个想法，赶紧下床把在脑中的文字移到一张书签的背面。那似乎是我的第一次网络写作。<a id="more"></a></p>
-<p>于是，从那一次的经历，到后来买黄钻装扮所谓的QQ空间。那些无关审美的非主流装饰，和矫情的文字，似乎也成我们这一代人的共同回忆。其实人们都希望拥有一个属于自己的空间，可以畅快的表达自己的情绪，或希望有人能看到，或只是写给自己。这也许也是建一个博客的想法一直占据在我的脑海中的原因。</p>
-<h1 id="促因"><a href="#促因" class="headerlink" title="促因"></a>促因</h1><p>大一上学期接触了程序设计，大学的空闲时间也给自己更多机会去接触新鲜的工具。虽说</p>
+      <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"> </script><h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>还记得小时候第一次接触QQ，申请了自己的第一个QQ号，几经变迁，号码几何现在早已经起不清了。但是还清晰地记得那时熄灯之后还在床上辗转反侧构想QQ的个性签名。许久，突然有了一个想法。赶紧下床，把在脑中的文字移到一张书签的背面。现在想来，那似乎是我的第一次网络写作。<a id="more"></a></p>
+<p>于是，从那一次的经历，到后来买黄钻装扮所谓的QQ空间。那些无关审美的非主流装饰，和矫情的文字，似乎也成我们这一代人的共同回忆。其实人们都希望拥有一个属于自己的自由空间，可以畅快地表达自己的情绪，或希望有人能看到，或只是写给自己。这也许也是建一个个人博客的想法一直占据在我的脑海中的原因吧。</p>
+<h1 id="促因"><a href="#促因" class="headerlink" title="促因"></a>促因</h1><p>大一上学期接触了编程，大学的资源也给自己更多机会去接触新鲜的工具。虽说</p>
 <blockquote>
 <p>优秀的程序员，都是通过展示自己的代码牛逼来展示自己的牛逼的。二逼的程序员，通过展示自己的工具……</p>
 <p>——vczh</p>
 </blockquote>
-<p>但是由于天生对工具的喜爱，还是抓紧时间玩了很多工具，Pr Ps Id Keynote ……，都给自己带了一些成就感，也许这就是乱点科技树的快感。后来因为对Linux的兴趣加入Cugb Lug(一个QQ群)，结果Linux反正是至今一窍不通，但却在群里认识一帮牛逼的学长（比如<a href="http://imnerd.org/" target="_blank" rel="external">公子</a>, <a href="http://fanzheng.org/" target="_blank" rel="external">范神</a>, <a href="http://tinko.moe" target="_blank" rel="external">Tinko</a>），学习到许多高端姿势。其中博客的字眼再一次出现在我眼中，进行了相关了解后，选择了github pages搭配hexo来搭建自己的博客，也就是现在大家看到的界面。</p>
+<p>但是由于天生对折腾工具的喜爱，还是玩了不少工具，Pr Ps Id Keynote ……都带给自己不少的成就感，也许这就是乱点科技树的快乐。后来因为对Linux的兴趣加入Cugb Lug(交流仅限于一个QQ群)，<del>结果Linux反正是至今一窍不通，</del> 似乎通了一些，但却在群里认识一帮值得学习的学长（比如<a href="http://imnerd.org/" target="_blank" rel="external">公子</a>, <a href="http://fanzheng.org/" target="_blank" rel="external">范神</a>, <a href="http://tinko.moe" target="_blank" rel="external">Tinko</a>），了解到许多高端姿势。其中博客的字眼又多次出现在我眼前，进行了相关了解后，我选择了github pages搭配hexo来搭建自己的博客，也就是现在大家看到的这样。</p>
 <h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><h3 id="选择Github的理由"><a href="#选择Github的理由" class="headerlink" title="选择Github的理由"></a>选择Github的理由</h3><ol>
 <li>立志成为码农的你已经或迟早要掌握Github</li>
 <li>Github pages提供了充分的可能性</li>
@@ -1023,16 +1023,9 @@ brew update
 <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><blockquote>
 <p>npm install hexo-cli -g</p>
 </blockquote>
-<p>好吧，可能以后真有人会看到，不能太坑。</p>
-<pre><code>npm install hexo-cli -g
-hexo init blog 这里的blog可以设置成自己喜欢的名字，但是接下去的blog也要换掉，鉴于我并没有试过，还是别了吧
-cd blog
-npm install
-hexo server
-</code></pre><p>期间可能需要漫长的等待，比如几十分钟，但如果太久还是去检查网络环境，比如试着翻个Wall，也可以停掉再重新开始（不建议）。反正到最后如果出现</p>
-<pre><code>INFO  Start processing
-INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
-</code></pre><p>就代表你成功了。这个过程中，截图一下<strong>安装目录信息</strong>，随时<strong>Google</strong>对你会有很大帮助，包治百病。现在，你可以在浏览器的地址栏输入<a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>来访问hexo生成的供你临时预览的网页了。这个功能，以后你会经常用到。</p>
+<p>好吧，可能以后真有人会看到，不能太坑。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog 这里的blog可以设置成自己喜欢的名字，但是接下去的blog也要换掉，鉴于我并没有试过，还是别了吧</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<p>期间可能需要漫长的等待，比如几十分钟，但如果太久还是去检查网络环境，比如试着翻个Wall，也可以停掉再重新开始（不建议）。反正到最后如果出现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://<span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">4000</span>/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
+<p>就代表你成功了。这个过程中，截图一下<strong>安装目录信息</strong>，随时<strong>Google</strong>对你会有很大帮助，包治百病。现在，你可以在浏览器的地址栏输入<a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>来访问hexo生成的供你临时预览的网页了。这个功能，以后你会经常用到。</p>
 <pre><code>hexo server
 </code></pre><p>这个代码，它的作用是建造一个本地预览的网页，效果基本是实时刷新的，有些改动没有刷新时，你可以尝试用（Ctrl +C）停止server，用</p>
 <pre><code>hexo clean
@@ -1048,39 +1041,36 @@ INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
 <p>至此，我们完成了一篇文章的写作。</p>
 <p>我想简单谈谈Markdown的问题。Markdown是一种轻量级的标记语言，它使我们可以不用学习html等比较难一点的标记语言就能进行很好的网页写作和排版。正如你所看到的，hexo默认使用Markdown进行排版。</p>
 <p>这里推荐你阅读知乎上这个<a href="https://www.zhihu.com/question/20409634" target="_blank" rel="external">问题</a>的高票答案，其中推荐的一些介绍Markdown的文章十分详尽，甚至对比了它html的区别，其实你如果不会html的话直接略过所有有关html的内容就好。<a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="external">github</a>也对Markdown进行了介绍</p>
-<p>在Mac OSX下我使用的是<a href="http://25.io/mou/" target="_blank" rel="external">Mou</a>这款编辑器。(习惯用sublime text的也可以选择安装markdown包来使用)</p>
-<h3 id="关于主题"><a href="#关于主题" class="headerlink" title="关于主题"></a>关于主题</h3><p>如果你不喜欢Hexo的默认主题，那你需要先学习应用一些别人做的主题。我的Blog使用的是<a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT</a>这款主题，你也可以在Hexo的网页上寻找你喜欢的主题。具体应用的方法也很简单，推荐你用NexT学习一下主题的应用方法，因为它的介绍写的十分详尽。</p>
-<h3 id="最后一步——部署"><a href="#最后一步——部署" class="headerlink" title="最后一步——部署"></a>最后一步——部署</h3><p>当你在本地预览看到了没有错误的网页时，你就可以把它部署到Github完成我们的最后一步了。</p>
+<p><del>在Mac OSX下我使用的是<a href="http://25.io/mou/" target="_blank" rel="external">Mou</a>这款编辑器。(习惯用sublime text的也可以选择安装markdown包来使用)</del><br>现全平台<a href="http://atmo.io" target="_blank" rel="external">atom</a>(2016-10-19)</p>
+<h3 id="关于主题"><a href="#关于主题" class="headerlink" title="关于主题"></a>关于主题</h3><p>如果你不喜欢Hexo的默认主题，那你需要先学习应用一些别人做的主题。我的Blog使用的是<a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT</a>这款主题，你也可以在Hexo的网页上寻找你喜欢的主题。具体应用的方法也很简单，推荐你用 NexT学习一下主题的应用方法，因为它有着比较大的用户群体，介绍也写的相对详细。</p>
+<h3 id="最后一步——部署"><a href="#最后一步——部署" class="headerlink" title="最后一步——部署"></a>最后一步——部署</h3><p>当你在本地预览看到了没有错误的网页时，你就可以把它部署到 Github完成我们的最后一步了。</p>
 <p>上传主要分两种方式</p>
 <ol>
-<li>使用Github Desktop软件部署</li>
+<li>使用<code>Github Desktop</code>软件部署</li>
 <li>使用命令行部署</li>
 </ol>
 <h4 id="命令行式"><a href="#命令行式" class="headerlink" title="命令行式"></a>命令行式</h4><p>这种方式需要进入你的hexo的根目录设置<code>_config.yml</code>文档，打开后找到<code>deploy</code>相关的设置，参考以下代码修改：</p>
-<pre><code>deploy:
-    type: git
-    repo: repository url \\去你的respository下复制
-    branch: master
-    message: \\留空，为默认
-</code></pre><p>所有冒号后面都<strong>一定</strong>要空一格，否则会引发严重的错误。</p>
-<p>接下来进入命令行，直接贴代码</p>
+<figure class="highlight less"><figcaption><span>config.yml yaml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git</span><br><span class="line">    <span class="attribute">repo</span>: repository url \\去你的respository下复制</span><br><span class="line">    <span class="attribute">branch</span>: master</span><br><span class="line">    <span class="attribute">message</span>: \\留空，为默认</span><br></pre></td></tr></table></figure>
+<p>所有冒号后面都<strong>一定</strong>要空一格，否则会引发严重的错误。</p>
+<p>接下来进入命令行，逐行输入以下代码</p>
 <pre><code>hexo clean\\保险一点，清一下缓存
 hexo generate\\在本地生成网页
 hexo deploy\\将网页部署到Github等网站
-</code></pre><p>熟练者可以直接使用<code>hexo d -g</code></p>
+</code></pre><p>熟练者可以在clean后直接使用<code>hexo d -g</code></p>
 <p>参看<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/deployment.html</a></p>
-<h4 id="Github-Desktop"><a href="#Github-Desktop" class="headerlink" title="Github Desktop"></a>Github Desktop</h4><p>先安装github desktop，参看<a href="https://help.github.com/desktop/guides/getting-started/" target="_blank" rel="external">https://help.github.com/desktop/guides/getting-started/</a>,了解一下工作的流程。</p>
+<h4 id="Github-Desktop"><a href="#Github-Desktop" class="headerlink" title="Github Desktop"></a>Github Desktop</h4><p>先安装github desktop，参看<a href="https://help.github.com/desktop/guides/getting-started/" target="_blank" rel="external">https://help.github.com/desktop/guides/getting-started/</a>,了解一下git的工作的流程。</p>
 <ol>
 <li>将<code>你的用户名.github.io</code>下载到本地的github desktop上</li>
 <li><p>在命令行中进行以下代码操作</p>
 <pre><code>hexo clean\\同样为了保险
 hexo generate\\在本地生成网页
 </code></pre></li>
-<li>这时候网页已经生成到了你的hexo的根目录里的<code>public</code>文件夹中，我们进入文件夹里把里面的所有文件复制到（1）中下载来的目录中</li>
-<li>进入github desktop这时你应该看到软件上有提示我们刚刚的操作产生了一些changes，接下来我们只需要应用这些changes到github上就可以了。所以输入相关描述（这是是写给人看的不是写给机器看的），点击<code>commit to master</code>，再点击<code>Sync</code>同步之，成功。</li>
+<li>这时候网页已经生成到了你的hexo的根目录里的<code>public</code>文件夹中(注意最终的网页只由这个文件夹里的文件决定，其他文件是生成网页的程序)，我们进入文件夹里把里面的所有文件复制到（1）中下载来的目录中</li>
+<li>进入github desktop这时你应该看到软件上有提示我们刚刚的操作产生了一些changes，接下来我们只需要把这些 changes 同步上传到 github 上就可以了。所以输入相关描述（这是是写给人看的不是写给机器看的，但是git要求我们<strong>必须</strong>输入），点击<code>commit to master</code>，再点击<code>Sync</code>同步之，成功。</li>
 </ol>
-<p>值得一提的是我在用命令行式同步了几次后不知道操作错了什么，出现了各种错误，至今没有搞清楚，所以还是使用github desktop式更加通用一些。(ps: 已解决，只要deploy设置正确就没有问题，切记冒号后面有一个<strong>空格</strong>，空格后面直接填写信息<strong>不要乱加标点</strong>)</p>
-<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><p>好了现在登陆<code>你的Github用户名.github.io</code>就可以看到我们在本地预览一样的页面了，更多功能就需要你自己去研究了。接下来我会给出我折腾过程对我很多帮助的一些文章供大家参考。</p>
+<p><del>值得一提的是我在用命令行式同步了几次后不知道操作错了什么，出现了各种错误，至今没有搞清楚，所以还是使用github desktop式更加通用一些。</del></p>
+<p>已解决，注意<code>_config.yml</code>文档中的deploy设置正确就没有问题，切记<code>yaml</code>文档必须按照应有的格式来，冒号后面有一个<strong>空格</strong>，空格后面直接填写信息<strong>不要乱加标点</strong>。</p>
+<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><p>好了现在登陆<code>http://你的Github用户名.github.io</code>就可以看到我们在本地预览一样的页面了，更多功能就需要你自己去研究了。接下来我会给出我折腾过程对我很多帮助的一些文章供大家参考。</p>
 <ol>
 <li><a href="http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/" target="_blank" rel="external">如何搭建一个独立博客——简明 Github Pages与 jekyll 教程</a>(在使用<code>godaddy</code>时遇到了一些麻烦，在<ruby>博哥<rp> (</rp><rt>lǐ bó</rt><rp>) </rp></ruby>的提示下转用阿里云，个人域名也不是必要的，所以文中没有提及)</li>
 <li><a href="http://www.pchou.info/web-build/2014/07/04/build-github-blog-page-08.html" target="_blank" rel="external">一步步在GitHub上创建博客主页-最新版</a></li>
